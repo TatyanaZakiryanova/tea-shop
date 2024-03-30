@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.card-image {
+    height: 200px;
+    width: 215px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        transform: scale(0.9);
+    }
+}
+
+.active-button {
+    background-color: red;
+}
+
+.content-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(215px,1fr));;
+    background-color: white;
+}
+
+  li {
+    list-style-type: none;
+  }

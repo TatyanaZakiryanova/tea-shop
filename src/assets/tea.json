@@ -1,0 +1,82 @@
+[
+    {
+      "id": 0,
+      "imageUrl": "src/assets/images/CherryAlmondBlack.PNG",
+      "title": "Cherry and Almond",
+      "type": "Black",
+      "weight": [100, 200],
+      "price": 250
+    },
+    {
+      "id": 1,
+      "imageUrl": "src/assets/images/CinnamonBlack.PNG",
+      "title": "Cinnamon",
+      "type": "Black",
+      "weight": [100, 200],
+      "price": 245
+    },
+    {
+      "id": 2,
+      "imageUrl": "src/assets/images/CoffeeWalnutBlack.PNG",
+      "title": "Coffee and Walnut",
+      "type": "Black",
+      "weight": [100, 200],
+      "price": 230
+    },
+    {
+      "id": 3,
+      "imageUrl": "src/assets/images/SaltedCaramelBlack.PNG",
+      "title": "Salted Caramel",
+      "type": "Black",
+      "weight": [100, 200],
+      "price": 300
+    },
+    {
+      "id": 4,
+      "imageUrl": "src/assets/images/TruffleBlack.PNG",
+      "title": "Truffle",
+      "type": "Black",
+      "weight": [100, 200],
+      "price": 320
+    },
+    {
+      "id": 5,
+      "imageUrl": "src/assets/images/AppleGreen.PNG",
+      "title": "Apple",
+      "type": "Green",
+      "weight": [100, 200],
+      "price": 300
+    },
+    {
+      "id": 6,
+      "imageUrl": "src/assets/images/CherryGreen.PNG",
+      "title": "Cherry",
+      "type": "Green",
+      "weight": [100, 200],
+      "price": 230
+    },
+    {
+      "id": 7,
+      "imageUrl": "src/assets/images/ExoticGardenGreen.PNG",
+      "title": "Exotic Garden",
+      "type": "Green",
+      "weight": [100, 200],
+      "price": 250
+    },
+    {
+      "id": 8,
+      "imageUrl": "src/assets/images/PeachPetalsGreen.PNG",
+      "title": "Peach and Petals",
+      "type": "Green",
+      "weight": [100, 200],
+      "price": 260
+    },
+    {
+      "id": 9,
+      "imageUrl": "src/assets/images/PricklyPearGreen.PNG",
+      "title": "Prickly Pear",
+      "type": "Green",
+      "weight": [100, 200],
+      "price": 270
+    }
+  ]
