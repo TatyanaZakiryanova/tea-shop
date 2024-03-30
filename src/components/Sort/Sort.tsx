@@ -3,7 +3,7 @@ export const Sort = () => {
     <div>
       <h2>Sort by:</h2>
       <ul>
-        <li>Name</li>
+        <li>Title</li>
         <li>Price</li>
       </ul>
     </div>
