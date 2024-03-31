@@ -5,7 +5,7 @@ export const Sort = () => {
   const [selectSort, setSelectSort] = useState<number>(0);
   const sort: string[] = ['Title', 'Price', 'Type'];
 
-  const selectedValue = sort[selectSort];
+  const selectedValue: string = sort[selectSort];
 
   const onClickSort = (i: number) => {
     setSelectSort(i), setActiveSort(false);

@@ -2,8 +2,7 @@ import { Categories } from './components/Categories/Categories';
 import { Header } from './components/Header/Header';
 import { Sort } from './components/Sort/Sort';
 import { TeaCard } from './components/TeaCard/TeaCard';
-
-import teas from './assets/tea.json';
+import { useState } from 'react';
 
 export type TeaProps = {
   id: number;
@@ -15,6 +14,20 @@ export type TeaProps = {
 };
 
 export const App = () => {
+  const [items, setItems] = useState<TeaProps[]>([]);
+
+  const fetchData = () => {
+    fetch('https://6608a863a2a5dd477b14ab61.mockapi.io/items')
+      .then((mockData) => {
+        return mockData.json();
+      })
+      .then((json) => {
+        setItems(json);
+      });
+  };
+
+  fetchData();
+
   return (
     <div className="wrapper">
       <Header />
@@ -26,11 +39,13 @@ export const App = () => {
           </div>
           <h2 className="content-title">Tea</h2>
           <div className="content-items">
-            {teas.map((obj) => (
-              <li key={obj.id}>
-                <TeaCard {...obj} />
-              </li>
-            ))}
+            <>
+              {items.map((obj) => (
+                <li key={obj.id}>
+                  <TeaCard {...obj} />
+                </li>
+              ))}
+            </>
           </div>
         </div>
       </div>

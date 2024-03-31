@@ -1,7 +1,7 @@
 [
     {
       "id": 0,
-      "imageUrl": "src/assets/images/CherryAlmondBlack.PNG",
+      "imageUrl": "https://i.ibb.co/1LrzR2P/Cherry-Almond-Black.png",
       "title": "Cherry and Almond",
       "type": "Black",
       "weight": [100, 200],
@@ -9,7 +9,7 @@
     },
     {
       "id": 1,
-      "imageUrl": "src/assets/images/CinnamonBlack.PNG",
+      "imageUrl": "https://i.ibb.co/TYChXrm/Cinnamon-Black.png",
       "title": "Cinnamon",
       "type": "Black",
       "weight": [100, 200],
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "imageUrl": "src/assets/images/CoffeeWalnutBlack.PNG",
+      "imageUrl": "https://i.ibb.co/NYtZPLG/Coffee-Walnut-Black.png",
       "title": "Coffee and Walnut",
       "type": "Black",
       "weight": [100, 200],
@@ -25,7 +25,7 @@
     },
     {
       "id": 3,
-      "imageUrl": "src/assets/images/SaltedCaramelBlack.PNG",
+      "imageUrl": "https://i.ibb.co/pnyKrk0/Salted-Caramel-Black.png",
       "title": "Salted Caramel",
       "type": "Black",
       "weight": [100, 200],
@@ -33,7 +33,7 @@
     },
     {
       "id": 4,
-      "imageUrl": "src/assets/images/TruffleBlack.PNG",
+      "imageUrl": "https://i.ibb.co/2jnVnLR/Truffle-Black.png",
       "title": "Truffle",
       "type": "Black",
       "weight": [100, 200],
@@ -41,7 +41,7 @@
     },
     {
       "id": 5,
-      "imageUrl": "src/assets/images/AppleGreen.PNG",
+      "imageUrl": "https://i.ibb.co/477ypKV/Apple-Green.png",
       "title": "Apple",
       "type": "Green",
       "weight": [100, 200],
@@ -49,7 +49,7 @@
     },
     {
       "id": 6,
-      "imageUrl": "src/assets/images/CherryGreen.PNG",
+      "imageUrl": "https://i.ibb.co/x6fd9bZ/Cherry-Green.png",
       "title": "Cherry",
       "type": "Green",
       "weight": [100, 200],
@@ -57,7 +57,7 @@
     },
     {
       "id": 7,
-      "imageUrl": "src/assets/images/ExoticGardenGreen.PNG",
+      "imageUrl": "https://i.ibb.co/YNgJybk/Exotic-Garden-Green.png",
       "title": "Exotic Garden",
       "type": "Green",
       "weight": [100, 200],
@@ -65,7 +65,7 @@
     },
     {
       "id": 8,
-      "imageUrl": "src/assets/images/PeachPetalsGreen.PNG",
+      "imageUrl": "https://i.ibb.co/G59V9Dy/Peach-Petals-Green.png",
       "title": "Peach and Petals",
       "type": "Green",
       "weight": [100, 200],
@@ -73,7 +73,7 @@
     },
     {
       "id": 9,
-      "imageUrl": "src/assets/images/PricklyPearGreen.PNG",
+      "imageUrl": "https://i.ibb.co/dgDqjCf/Prickly-Pear-Green.png",
       "title": "Prickly Pear",
       "type": "Green",
       "weight": [100, 200],
