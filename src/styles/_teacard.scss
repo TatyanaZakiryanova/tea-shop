@@ -9,8 +9,15 @@
         transition: all 0.3s ease-in-out;
         &:hover {
             transform: scale(0.9);
-        }
     }
+    }
+    &-title {
+        font-weight: bold;
+    }
+    .tea-price {
+        font-weight: bold;
+    }
+ }
 
     button {
         margin: 4px;
@@ -20,4 +27,3 @@
             cursor: pointer;
         }
     }
-}
