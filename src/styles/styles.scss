@@ -5,6 +5,7 @@
 
 body {
     background-color: aquamarine;
+
 }
 
 .card-image {
@@ -22,13 +23,15 @@ body {
 
 .content-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(215px,1fr));;
+    grid-template-columns: repeat(auto-fit,minmax(215px,1fr));
     background-color: white;
 }
 
   li {
     list-style-type: none;
   }
+
 .active {
     color: red;
 }
+

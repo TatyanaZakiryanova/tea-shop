@@ -10,7 +10,7 @@ export const TeaCard: React.FC<TeaProps> = ({ imageUrl, title, type, weight, pri
         <img className="card-image" src={imageUrl} />
         <h3 className="card-title">{title}</h3>
         <div className="card-inform">
-          <h4 className="tea-price">Price: from {price} &#8381;</h4>
+          <h4 className="tea-price">from {price} &#8381;</h4>
           <h5>per 100 grams</h5>
           <h4 className="tea-type">Type: {type} tea</h4>
           <div className="weight-selector">

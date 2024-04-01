@@ -1,8 +1,8 @@
-import { Categories } from './components/Categories/Categories';
+import { Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header/Header';
-import { Sort } from './components/Sort/Sort';
-import { TeaCard } from './components/TeaCard/TeaCard';
-import { useEffect, useState } from 'react';
+import Main from './pages/Main';
+import NotFound from './pages/NotFound';
+import Cart from './pages/Cart';
 
 export type TeaProps = {
   id: number;
@@ -13,41 +13,22 @@ export type TeaProps = {
   price: number;
 };
 
-export const App = () => {
-  const [items, setItems] = useState<TeaProps[]>([]);
-
-  useEffect(() => {
-    fetch('https://6608a863a2a5dd477b14ab61.mockapi.io/items')
-      .then((mockData) => {
-        return mockData.json();
-      })
-      .then((json) => {
-        setItems(json);
-      });
-  }, []);
-
+export const App = (): JSX.Element => {
   return (
-    <div className="wrapper">
-      <Header />
-      <div className="content">
-        <div className="container">
-          <div className="content-top">
-            <Categories />
-            <Sort />
-          </div>
-          <h2 className="content-title">Tea</h2>
-          <div className="content-items">
-            <>
-              {items.map((obj) => (
-                <li key={obj.id}>
-                  <TeaCard {...obj} />
-                </li>
-              ))}
-            </>
+    <>
+      <div className="wrapper">
+        <Header />
+        <div className="content">
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
