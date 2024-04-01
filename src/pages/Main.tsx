@@ -18,22 +18,23 @@ const Main = (): JSX.Element => {
   }, []);
 
   return (
-    <>
-      <div className="content-top">
-        <Categories />
-        <Sort />
+    <div className="wrapper">
+      <div className="content">
+        <div className="content-top">
+          <Categories />
+          <Sort />
+        </div>
+        <div className="content-items">
+          <>
+            {items.map((obj) => (
+              <li key={obj.id}>
+                <TeaCard {...obj} />
+              </li>
+            ))}
+          </>
+        </div>
       </div>
-      <h2 className="content-title">Tea</h2>
-      <div className="content-items">
-        <>
-          {items.map((obj) => (
-            <li key={obj.id}>
-              <TeaCard {...obj} />
-            </li>
-          ))}
-        </>
-      </div>
-    </>
+    </div>
   );
 };
 

@@ -14,8 +14,9 @@ export const Sort = () => {
   return (
     <div className="sort">
       <div className="sort-label">
-        <h2>Sort by:</h2>
-        <span onClick={() => setActiveSort(!activeSort)}>{selectedValue}</span>
+        <h2>
+          Sort by: <span onClick={() => setActiveSort(!activeSort)}>{selectedValue}</span>
+        </h2>
       </div>
       {activeSort && (
         <div className="sort-popup">

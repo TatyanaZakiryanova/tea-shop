@@ -1,0 +1,28 @@
+.sort {
+    position: relative;
+    font-size: 1.1rem;
+    &-label {
+        span {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+    &-popup {
+        position: absolute;
+        right: 0;
+        padding: 10px 0;
+        ul {
+            display: flex;
+            flex-direction: column;
+            background-color:  rgb(79, 142, 87);
+            li {
+                cursor: pointer;
+                padding: 10px 10px;
+                font-size: 1.5rem;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+        }
+    }

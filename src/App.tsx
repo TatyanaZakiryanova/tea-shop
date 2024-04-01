@@ -16,18 +16,12 @@ export type TeaProps = {
 export const App = (): JSX.Element => {
   return (
     <>
-      <div className="wrapper">
-        <Header />
-        <div className="content">
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="cart" element={<Cart />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-        </div>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 };

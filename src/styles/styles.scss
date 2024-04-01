@@ -1,37 +1,56 @@
+@import './all';
+
 * {
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 body {
-    background-color: aquamarine;
-
+    background-color: rgb(149, 203, 149);
 }
 
-.card-image {
-    height: 200px;
-    width: 215px;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-        transform: scale(0.9);
-    }
+.wrapper {
+    margin: 10px 10px;
+}
+
+button {
+    border: none;
+    font-size: 1.2rem;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .active-button {
-    background-color: red;
+    border: none;
+    background-color:  rgb(79, 142, 87);
 }
 
-.content-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(215px,1fr));
-    background-color: white;
+.content {
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    ul {
+        display: flex;
+    }
+    &-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(215px,1fr));
+        background-color: white;
+        justify-items: center;
+    }
 }
 
   li {
     list-style-type: none;
   }
 
-.active {
-    color: red;
+  .error-icon {
+    text-align: center;
+    padding: 100px;
+    margin: 0 auto;
 }
-

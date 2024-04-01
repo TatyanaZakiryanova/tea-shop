@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 
 export const Header = (): JSX.Element => {
   return (
-    <div className="header">
-      <div className="container">
-        <Link to="/">
+    <div className="wrapper">
+      <div className="header">
+        <Link to="/" className="header-link">
           <div className="header-logo">
             <img />
             <div className="header-title">
@@ -13,7 +13,9 @@ export const Header = (): JSX.Element => {
           </div>
         </Link>
         <div className="cart-button">
-          <Link to="cart">Cart</Link>
+          <Link to="cart" className="cart-link">
+            Cart
+          </Link>
         </div>
       </div>
     </div>
