@@ -8,8 +8,12 @@
     font-style: normal;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
-    background-color: rgb(149, 203, 149);
+    background-color:  rgb(86, 166, 134);
 }
 
 .wrapper {
@@ -21,11 +25,12 @@ button {
     font-size: 1.2rem;
     padding: 5px;
     box-sizing: border-box;
+    border-radius: 4px;
 }
 
 .active-button {
     border: none;
-    background-color:  rgb(79, 142, 87);
+    background-color: rgb(44, 125, 91);
 }
 
 .content {
@@ -42,6 +47,7 @@ button {
         grid-template-columns: repeat(auto-fit,minmax(215px,1fr));
         background-color: white;
         justify-items: center;
+        border-radius: 4px;
     }
 }
 
@@ -53,4 +59,6 @@ button {
     text-align: center;
     padding: 100px;
     margin: 0 auto;
+    font-size: 1.5rem;
+    color:   rgb(44, 125, 91);
 }

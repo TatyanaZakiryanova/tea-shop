@@ -28,7 +28,7 @@ export const TeaCard: React.FC<TeaProps> = ({ imageUrl, title, type, weight, pri
               ))}
             </ul>
           </div>
-          <button className="cart-add">Add to cart</button>
+          <button className="cart-add">+ Add to cart</button>
         </div>
       </div>
     </div>

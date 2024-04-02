@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import Main from './pages/Main';
 import NotFound from './pages/NotFound';
-import Cart from './pages/Cart';
+import CartPage from './pages/CartPage';
 
 export type TeaProps = {
   id: number;
@@ -19,7 +19,7 @@ export const App = (): JSX.Element => {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="cart" element={<Cart />} />
+        <Route path="cart" element={<CartPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

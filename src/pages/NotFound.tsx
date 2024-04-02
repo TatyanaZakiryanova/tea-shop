@@ -1,6 +1,6 @@
 import { DataNotFound } from '../components/DataNotFound/DataNotFound';
 
-export const NotFound = () => {
+export const NotFound = (): JSX.Element => {
   return <DataNotFound />;
 };
 

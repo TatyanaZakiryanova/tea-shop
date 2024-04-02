@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Sort = () => {
+export const Sort = (): JSX.Element => {
   const [activeSort, setActiveSort] = useState<boolean>(false);
   const [selectSort, setSelectSort] = useState<number>(0);
   const sort: string[] = ['Title', 'Price', 'Type'];
