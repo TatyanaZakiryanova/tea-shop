@@ -1,20 +1,22 @@
-import { useState } from 'react';
-
-export const Categories = (): JSX.Element => {
-  const [activeCategoryIndex, setActiveCategoryIndex] = useState<number>(0);
-
+export const Categories = ({
+  value,
+  onSelectCategory,
+}: {
+  value: number;
+  onSelectCategory: (index: number) => void;
+}): JSX.Element => {
   const categories: string[] = ['All', 'Black', 'Green'];
 
   return (
     <div className="categories">
       <ul>
-        {categories.map((value, index) => (
-          <li key={index}>
+        {categories.map((name, id) => (
+          <li key={id}>
             <button
-              className={activeCategoryIndex === index ? 'active-button' : ''}
-              onClick={() => setActiveCategoryIndex(index)}
+              className={value === id ? 'active-button' : ''}
+              onClick={() => onSelectCategory(id)}
             >
-              {value}
+              {name}
             </button>
           </li>
         ))}

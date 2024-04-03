@@ -1,7 +1,10 @@
 import { FaCartShopping } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { Search } from '../Search/Search';
 
 export const Header = (): JSX.Element => {
+  const location = useLocation();
+
   return (
     <div className="wrapper">
       <div className="header">
@@ -11,11 +14,14 @@ export const Header = (): JSX.Element => {
             <p>loose leaf tea with exquisite taste</p>
           </div>
         </Link>
-        <button className="cart-button">
-          <Link to="cart" className="cart-link">
-            <FaCartShopping className="cart-icon" /> 0
-          </Link>
-        </button>
+        {location.pathname !== '/cart' && <Search />}
+        {location.pathname !== '/cart' && (
+          <button className="cart-button">
+            <Link to="cart" className="cart-link">
+              <FaCartShopping className="cart-icon" /> 0
+            </Link>
+          </button>
+        )}
       </div>
     </div>
   );
