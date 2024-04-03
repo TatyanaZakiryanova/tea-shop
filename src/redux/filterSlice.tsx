@@ -14,7 +14,7 @@ const initialState: FilterSlice = {
   categoryIndex: 0,
   sort: {
     name: 'Title',
-    sortParam: 'Title',
+    sortParam: 'title',
   },
 };
 
@@ -25,8 +25,11 @@ const filterSlice = createSlice({
     setCategoryIndex: (state, action) => {
       state.categoryIndex = action.payload;
     },
+    setSortParam: (state, action) => {
+      state.sort = action.payload;
+    },
   },
 });
 
-export const { setCategoryIndex } = filterSlice.actions;
+export const { setCategoryIndex, setSortParam } = filterSlice.actions;
 export default filterSlice.reducer;
