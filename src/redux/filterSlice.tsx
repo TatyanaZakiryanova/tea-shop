@@ -1,18 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export type SortName = {
+  name: string;
+  sortParam: string;
+};
+
 export type FilterSlice = {
   categoryIndex: number;
-  sort: {
-    name: string;
-    sortParam: string;
-  };
+  sort: SortName;
 };
 
 const initialState: FilterSlice = {
   categoryIndex: 0,
   sort: {
     name: 'Title',
-    sortParam: 'title',
+    sortParam: 'Title',
   },
 };
 

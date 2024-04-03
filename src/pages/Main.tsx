@@ -4,9 +4,14 @@ import { Categories } from '../components/Categories/Categories';
 import { Sort } from '../components/Sort/Sort';
 import { TeaCard } from '../components/TeaCard/TeaCard';
 import { useAppDispatch, useAppSelector } from '../redux/store';
-import { setCategoryIndex } from '../redux/filterSlice';
+import { SortName, setCategoryIndex } from '../redux/filterSlice';
 
 const Main = (): JSX.Element => {
+  const [sortType, setSortType] = useState<SortName>({
+    name: 'Title',
+    sortParam: 'title',
+  });
+
   const dispatch = useAppDispatch();
   const categoryIndex = useAppSelector((state) => state.filterReducer.categoryIndex);
 
@@ -17,10 +22,11 @@ const Main = (): JSX.Element => {
   const [items, setItems] = useState<TeaProps[]>([]);
 
   useEffect(() => {
+    const order = sortType.sortParam === 'title' ? 'asc' : 'desc';
+    const category = categoryIndex > 0 ? `category=${categoryIndex}` : '';
+
     fetch(
-      `https://6608a863a2a5dd477b14ab61.mockapi.io/items?${
-        categoryIndex > 0 ? `category=${categoryIndex}` : ''
-      }`,
+      `https://6608a863a2a5dd477b14ab61.mockapi.io/items?${category}&sortBy=${sortType.sortParam}&order=${order}`,
     )
       .then((mockData) => {
         return mockData.json();
@@ -28,14 +34,17 @@ const Main = (): JSX.Element => {
       .then((json) => {
         setItems(json);
       });
-  });
+  }, [categoryIndex, sortType]);
+
+  console.log(categoryIndex);
+  console.log(sortType);
 
   return (
     <div className="wrapper">
       <div className="content">
         <div className="content-top">
           <Categories value={categoryIndex} onSelectCategory={onSelectCategory} />
-          <Sort />
+          <Sort value={sortType} onChangeSort={(i) => setSortType(i)} />
         </div>
         <div className="content-items">
           <>

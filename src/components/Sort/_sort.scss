@@ -2,6 +2,10 @@
     position: relative;
     font-size: 1.1rem;
     &-label {
+        display: flex;
+        .sort-icon {
+            font-size: 29px;
+        }
         span {
             cursor: pointer;
             font-weight: bold;

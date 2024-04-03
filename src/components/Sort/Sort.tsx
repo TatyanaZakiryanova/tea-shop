@@ -1,33 +1,49 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { SortName } from '../../redux/filterSlice';
+import { PiSortAscendingLight } from 'react-icons/pi';
 
-export const Sort = (): JSX.Element => {
+export const Sort = ({
+  value,
+  onChangeSort,
+}: {
+  value: SortName;
+  onChangeSort: (i: SortName) => void;
+}): JSX.Element => {
   const [activeSort, setActiveSort] = useState<boolean>(false);
-  const [selectSort, setSelectSort] = useState<number>(0);
-  const sort: string[] = ['Title', 'Price', 'Rating'];
+  const sort: Array<SortName> = [
+    {
+      name: 'Title',
+      sortParam: 'title',
+    },
+    { name: 'Price', sortParam: 'price' },
+    {
+      name: 'Rating ',
+      sortParam: 'rating',
+    },
+  ];
 
-  const selectedValue: string = sort[selectSort];
-
-  const onClickSort = (i: number) => {
-    setSelectSort(i), setActiveSort(false);
+  const onClickSort = (val: SortName) => {
+    onChangeSort(val), setActiveSort(false);
   };
 
   return (
     <div className="sort">
       <div className="sort-label">
+        <PiSortAscendingLight className="sort-icon" />
         <h2>
-          Sort by: <span onClick={() => setActiveSort(!activeSort)}>{selectedValue}</span>
+          Sort by: <span onClick={() => setActiveSort(!activeSort)}>{value.name}</span>
         </h2>
       </div>
       {activeSort && (
         <div className="sort-popup">
           <ul>
-            {sort.map((name, i) => (
+            {sort.map((obj, i) => (
               <li
                 key={i}
-                onClick={() => onClickSort(i)}
-                className={selectSort === i ? 'active' : ''}
+                onClick={() => onClickSort(obj)}
+                className={value.sortParam === obj.sortParam ? 'active' : ''}
               >
-                {name}
+                {obj.name}
               </li>
             ))}
           </ul>
