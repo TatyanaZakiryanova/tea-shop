@@ -6,6 +6,7 @@ import { TeaCard } from '../components/TeaCard/TeaCard';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { setCategoryIndex } from '../redux/filterSlice';
 import axios from 'axios';
+import { Spinner } from '../components/Spinner/Spinner';
 
 const Main = (): JSX.Element => {
   const { searchValue } = useContext(SearchContext);
@@ -20,6 +21,7 @@ const Main = (): JSX.Element => {
   };
 
   const [items, setItems] = useState<TeaProps[]>([]);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     const order = sortType.sortParam === 'title' ? 'asc' : 'desc';
@@ -32,6 +34,7 @@ const Main = (): JSX.Element => {
       )
       .then((res) => {
         setItems(res.data);
+        setIsLoaded(true);
       })
       .catch((err) => console.log(err));
   }, [categoryIndex, sortType, searchValue]);
@@ -45,11 +48,15 @@ const Main = (): JSX.Element => {
         </div>
         <div className="content-items">
           <>
-            {items.map((obj) => (
-              <li key={obj.id}>
-                <TeaCard {...obj} />
-              </li>
-            ))}
+            {items && isLoaded ? (
+              items.map((obj) => (
+                <li key={obj.id}>
+                  <TeaCard {...obj} />
+                </li>
+              ))
+            ) : (
+              <Spinner />
+            )}
           </>
         </div>
       </div>
