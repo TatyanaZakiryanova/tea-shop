@@ -1,12 +1,15 @@
-import { useState, useEffect } from 'react';
-import { TeaProps } from '../App';
+import { useState, useEffect, useContext } from 'react';
+import { SearchContext, TeaProps } from '../App';
 import { Categories } from '../components/Categories/Categories';
 import { Sort } from '../components/Sort/Sort';
 import { TeaCard } from '../components/TeaCard/TeaCard';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { setCategoryIndex } from '../redux/filterSlice';
+import axios from 'axios';
 
 const Main = (): JSX.Element => {
+  const { searchValue } = useContext(SearchContext);
+
   const sortType = useAppSelector((state) => state.filterReducer.sort);
   const categoryIndex = useAppSelector((state) => state.filterReducer.categoryIndex);
 
@@ -21,17 +24,17 @@ const Main = (): JSX.Element => {
   useEffect(() => {
     const order = sortType.sortParam === 'title' ? 'asc' : 'desc';
     const category = categoryIndex > 0 ? `category=${categoryIndex}` : '';
+    const search = searchValue;
 
-    fetch(
-      `https://6608a863a2a5dd477b14ab61.mockapi.io/items?${category}&sortBy=${sortType.sortParam}&order=${order}`,
-    )
-      .then((mockData) => {
-        return mockData.json();
+    axios
+      .get(
+        `https://6608a863a2a5dd477b14ab61.mockapi.io/items?${category}&sortBy=${sortType.sortParam}&order=${order}&search=${search}`,
+      )
+      .then((res) => {
+        setItems(res.data);
       })
-      .then((json) => {
-        setItems(json);
-      });
-  }, [categoryIndex, sortType]);
+      .catch((err) => console.log(err));
+  }, [categoryIndex, sortType, searchValue]);
 
   return (
     <div className="wrapper">

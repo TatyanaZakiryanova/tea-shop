@@ -1,10 +1,8 @@
-import { useState } from 'react';
-import { VscSearch } from 'react-icons/vsc';
+import { useContext } from 'react';
+import { SearchContext } from '../../App';
 
 export const Search = () => {
-  const [searchValue, setSearchValue] = useState<string>('');
-
-  console.log(searchValue);
+  const { searchValue, setSearchValue } = useContext(SearchContext);
 
   return (
     <div className="search-input">
