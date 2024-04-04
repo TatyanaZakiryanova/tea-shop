@@ -24,7 +24,11 @@ const Main = (): JSX.Element => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
-    const order = sortType.sortParam === 'title' ? 'asc' : 'desc';
+    const order =
+      sortType.sortParam === 'title' ||
+      ((sortType.sortParam === 'price' || 'rating') && sortType.name.includes('↑'))
+        ? 'asc'
+        : 'desc';
     const category = categoryIndex > 0 ? `category=${categoryIndex}` : '';
     const search = searchValue;
 

@@ -1,16 +1,19 @@
 .sort {
     position: relative;
-    font-size: 1.1rem;
+    font-size: 1rem;
     &-label {
         display: flex;
-        @media screen and (max-width: 390px) {
+        @media screen and (max-width: 414px) {
             font-size: 1rem;
         }
+        @media screen and (max-width: 390px) {
+            font-size: 0.7rem;
+        }
         @media screen and (max-width: 376px) {
-            font-size: 0.8rem;
+            font-size: 0.6rem;
         }
         @media screen and (max-width: 360px){
-            font-size: 0.8rem;
+            font-size: 0.6rem;
         }
         .sort-icon {
             font-size: 29px;

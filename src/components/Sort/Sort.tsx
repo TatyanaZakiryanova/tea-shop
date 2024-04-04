@@ -8,9 +8,14 @@ const sort: Array<SortName> = [
     name: 'Title',
     sortParam: 'title',
   },
-  { name: 'Price', sortParam: 'price' },
+  { name: 'Price ↓', sortParam: 'price' },
+  { name: 'Price ↑', sortParam: 'price' },
   {
-    name: 'Rating ',
+    name: 'Rating ↓ ',
+    sortParam: 'rating',
+  },
+  {
+    name: 'Rating ↑ ',
     sortParam: 'rating',
   },
 ];
