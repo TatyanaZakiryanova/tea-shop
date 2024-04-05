@@ -37,16 +37,16 @@ const ItemInCart: React.FC<CartItem> = ({
           <h4 className="tea-weight">Weight: {weight} g</h4>
           <h4 className="tea-amount">
             Amount: {count}{' '}
-            <button className="add-amount" onClick={onClickPlusAmount}>
+            <button className="plus-amount" onClick={onClickPlusAmount}>
               +
             </button>
-            <button className="remove-amount" onClick={onClickMinusAmount}>
+            <button className="minus-amount" onClick={onClickMinusAmount}>
               -
             </button>
           </h4>
         </div>
         <button className="delete-item" onClick={onClickRemoveItem}>
-          X
+          X Delete item
         </button>
       </div>
     </>

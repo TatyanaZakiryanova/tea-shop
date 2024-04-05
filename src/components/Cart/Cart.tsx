@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CartItem, clearCart } from '../../redux/cartSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import ItemInCart from './ItemInCart';
@@ -22,10 +23,15 @@ const Cart = (): JSX.Element => {
             ))}
           </div>
         </div>
-        <button className="clear-cart" onClick={onClickClearCart}>
-          Clear cart
-        </button>
-        <div className="items-cost">Total cost: {totalCost} &#8381;</div>
+        <div className="cart-inform">
+          <div className="items-cost">Total cost: {totalCost} &#8381;</div>
+          <button className="clear-cart" onClick={onClickClearCart}>
+            Clear cart
+          </button>
+        </div>
+        <Link to="/" className="back-link">
+          <button className="cart-back">← Back</button>
+        </Link>
       </div>
     </div>
   );
