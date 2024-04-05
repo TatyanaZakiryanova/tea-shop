@@ -1,18 +1,21 @@
-import { useContext } from 'react';
-import { SearchContext } from '../../App';
 import { LiaSearchSolid } from 'react-icons/lia';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { setSearchValue } from '../../redux/filterSlice';
+import { ChangeEvent } from 'react';
 
 export const Search = () => {
-  const { searchValue, setSearchValue } = useContext(SearchContext);
+  const searchParam = useAppSelector((state) => state.filterReducer.searchValue);
+  const dispatch = useAppDispatch();
 
+  const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchValue(event.target.value));
+  };
+
+  console.log(searchParam);
   return (
     <div className="search-input">
       <LiaSearchSolid className="search-icon" />
-      <input
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-        placeholder="Search..."
-      />
+      <input value={searchParam} onChange={onChangeInput} placeholder="Search..." />
     </div>
   );
 };

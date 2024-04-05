@@ -1,5 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
-import { SearchContext, TeaProps } from '../App';
+import { useState, useEffect } from 'react';
+import { TeaProps } from '../App';
 import { Categories } from '../components/Categories/Categories';
 import { Sort } from '../components/Sort/Sort';
 import { TeaCard } from '../components/TeaCard/TeaCard';
@@ -9,10 +9,9 @@ import axios from 'axios';
 import { Spinner } from '../components/Spinner/Spinner';
 
 const Main = (): JSX.Element => {
-  const { searchValue } = useContext(SearchContext);
-
   const sortType = useAppSelector((state) => state.filterReducer.sort);
   const categoryIndex = useAppSelector((state) => state.filterReducer.categoryIndex);
+  const searchValue = useAppSelector((state) => state.filterReducer.searchValue);
 
   const dispatch = useAppDispatch();
 
