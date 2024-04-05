@@ -1,4 +1,4 @@
-import { CartItem, removeItem } from '../../redux/cartSlice';
+import { CartItem, addItem, minusAmount, removeItem } from '../../redux/cartSlice';
 import { useAppDispatch } from '../../redux/store';
 
 const ItemInCart: React.FC<CartItem> = ({
@@ -17,6 +17,14 @@ const ItemInCart: React.FC<CartItem> = ({
     dispatch(removeItem({ id, weight } as CartItem));
   };
 
+  const onClickPlusAmount = () => {
+    dispatch(addItem({ id, weight } as CartItem));
+  };
+
+  const onClickMinusAmount = () => {
+    dispatch(minusAmount({ id, weight } as CartItem));
+  };
+
   return (
     <>
       <div className="card">
@@ -28,8 +36,13 @@ const ItemInCart: React.FC<CartItem> = ({
           <h4 className="tea-rating">Rating: {rating}</h4>
           <h4 className="tea-weight">Weight: {weight} g</h4>
           <h4 className="tea-amount">
-            Amount: {count} <button className="add-amount">+</button>
-            <button className="remove-amount">-</button>
+            Amount: {count}{' '}
+            <button className="add-amount" onClick={onClickPlusAmount}>
+              +
+            </button>
+            <button className="remove-amount" onClick={onClickMinusAmount}>
+              -
+            </button>
           </h4>
         </div>
         <button className="delete-item" onClick={onClickRemoveItem}>

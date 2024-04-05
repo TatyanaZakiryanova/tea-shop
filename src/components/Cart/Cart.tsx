@@ -25,7 +25,7 @@ const Cart = (): JSX.Element => {
         <button className="clear-cart" onClick={onClickClearCart}>
           Clear cart
         </button>
-        <div className="items-cost">Total Cost: {totalCost} &#8381;</div>
+        <div className="items-cost">Total cost: {totalCost} &#8381;</div>
       </div>
     </div>
   );
