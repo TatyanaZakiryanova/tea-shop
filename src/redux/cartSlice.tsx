@@ -8,6 +8,7 @@ export type CartItem = {
   rating: number;
   weight: number;
   price: number;
+  count: number;
 };
 
 export type CartSlice = {
@@ -25,7 +26,18 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {
-      state.items.push(action.payload);
+      if (action.payload.weight === 200) {
+        action.payload.price *= 2;
+      }
+      const findItem = state.items.find(
+        (item) => item.id === action.payload.id && item.weight === action.payload.weight,
+      );
+      if (findItem) {
+        findItem.count++;
+      } else {
+        state.items.push({ ...action.payload, count: 1 });
+      }
+      state.totalCost += action.payload.price;
     },
     removeItem: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);

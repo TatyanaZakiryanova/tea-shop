@@ -24,6 +24,7 @@ export const TeaCard: React.FC<TeaProps> = ({
       weight: weight[activeWeight],
       price,
       rating,
+      count: 0,
     };
     dispatch(addItem(item));
   };

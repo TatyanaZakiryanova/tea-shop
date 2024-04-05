@@ -6,6 +6,7 @@ import { useAppSelector } from '../../redux/store';
 export const Header = (): JSX.Element => {
   const location = useLocation();
   const { items } = useAppSelector((state) => state.cartReducer);
+  const totalCount = items.reduce((val, item) => val + item.count, 0);
 
   return (
     <div className="wrapper">
@@ -20,7 +21,7 @@ export const Header = (): JSX.Element => {
         {location.pathname !== '/cart' && (
           <button className="cart-button">
             <Link to="cart" className="cart-link">
-              <FaCartShopping className="cart-icon" /> {items.length}
+              <FaCartShopping className="cart-icon" /> {totalCount}
             </Link>
           </button>
         )}
