@@ -1,10 +1,16 @@
-import { CartItem } from '../../redux/cartSlice';
-import { useAppSelector } from '../../redux/store';
+import { CartItem, clearCart } from '../../redux/cartSlice';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 import ItemInCart from './ItemInCart';
 
 const Cart = (): JSX.Element => {
   const items = useAppSelector((state) => state.cartReducer.items);
   const totalCost = useAppSelector((state) => state.cartReducer.totalCost);
+
+  const dispatch = useAppDispatch();
+  const onClickClearCart = () => {
+    dispatch(clearCart());
+  };
+
   return (
     <div className="wrapper">
       <div className="cart">
@@ -15,9 +21,11 @@ const Cart = (): JSX.Element => {
               <ItemInCart key={item.id} {...item} />
             ))}
           </div>
-          <div className="items-number">Number</div>
-          <div className="items-cost">Total Cost: {totalCost} &#8381;</div>
         </div>
+        <button className="clear-cart" onClick={onClickClearCart}>
+          Clear cart
+        </button>
+        <div className="items-cost">Total Cost: {totalCost} &#8381;</div>
       </div>
     </div>
   );
