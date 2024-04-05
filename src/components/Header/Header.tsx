@@ -1,9 +1,11 @@
 import { FaCartShopping } from 'react-icons/fa6';
 import { Link, useLocation } from 'react-router-dom';
 import { Search } from '../Search/Search';
+import { useAppSelector } from '../../redux/store';
 
 export const Header = (): JSX.Element => {
   const location = useLocation();
+  const { items } = useAppSelector((state) => state.cartReducer);
 
   return (
     <div className="wrapper">
@@ -18,7 +20,7 @@ export const Header = (): JSX.Element => {
         {location.pathname !== '/cart' && (
           <button className="cart-button">
             <Link to="cart" className="cart-link">
-              <FaCartShopping className="cart-icon" /> 0
+              <FaCartShopping className="cart-icon" /> {items.length}
             </Link>
           </button>
         )}

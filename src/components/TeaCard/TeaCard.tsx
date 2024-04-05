@@ -1,8 +1,32 @@
 import { useState } from 'react';
 import { TeaProps } from '../../App';
+import { CartItem, addItem } from '../../redux/cartSlice';
+import { useAppDispatch } from '../../redux/store';
 
-export const TeaCard: React.FC<TeaProps> = ({ imageUrl, title, type, weight, price, rating }) => {
+export const TeaCard: React.FC<TeaProps> = ({
+  id,
+  imageUrl,
+  title,
+  type,
+  weight,
+  price,
+  rating,
+}) => {
   const [activeWeight, setActiveWeight] = useState<number>(0);
+  const dispatch = useAppDispatch();
+
+  const onClickAddItem = () => {
+    const item: CartItem = {
+      id,
+      imageUrl,
+      title,
+      type,
+      weight: weight[activeWeight],
+      price,
+      rating,
+    };
+    dispatch(addItem(item));
+  };
 
   return (
     <div className="card-wrapper">
@@ -29,7 +53,9 @@ export const TeaCard: React.FC<TeaProps> = ({ imageUrl, title, type, weight, pri
               ))}
             </ul>
           </div>
-          <button className="cart-add">+ Add to cart</button>
+          <button onClick={onClickAddItem} className="cart-add">
+            + Add to cart
+          </button>
         </div>
       </div>
     </div>
