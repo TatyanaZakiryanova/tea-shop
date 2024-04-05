@@ -1,21 +1,28 @@
 import { LiaSearchSolid } from 'react-icons/lia';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 import { setSearchValue } from '../../redux/filterSlice';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useCallback, useState } from 'react';
+import debounce from 'lodash.debounce';
 
 export const Search = () => {
-  const searchParam = useAppSelector((state) => state.filterReducer.searchValue);
+  const [searchText, setSearchText] = useState<string>('');
   const dispatch = useAppDispatch();
 
+  const debouncedOnChangeInput = useCallback(
+    debounce((val: string) => {
+      dispatch(setSearchValue(val));
+    }, 300),
+    [],
+  );
+
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchValue(event.target.value));
+    setSearchText(event.target.value), debouncedOnChangeInput(event.target.value);
   };
 
-  console.log(searchParam);
   return (
     <div className="search-input">
       <LiaSearchSolid className="search-icon" />
-      <input value={searchParam} onChange={onChangeInput} placeholder="Search..." />
+      <input value={searchText} onChange={onChangeInput} placeholder="Search..." />
     </div>
   );
 };

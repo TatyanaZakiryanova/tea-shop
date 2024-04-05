@@ -1,9 +1,11 @@
-export const Categories = ({
-  value,
-  onSelectCategory,
-}: {
+type selectCategoryProps = {
   value: number;
   onSelectCategory: (index: number) => void;
+};
+
+export const Categories: React.FC<selectCategoryProps> = ({
+  value,
+  onSelectCategory,
 }): JSX.Element => {
   const categories: string[] = ['All', 'Black', 'Green'];
 
