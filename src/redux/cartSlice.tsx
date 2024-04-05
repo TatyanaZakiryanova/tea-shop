@@ -16,6 +16,10 @@ export type CartSlice = {
   totalCost: number;
 };
 
+export const calcTotalCost = (items: CartItem[]) => {
+  return items.reduce((sum, item) => item.price * item.count + sum, 0);
+};
+
 const initialState: CartSlice = {
   items: [],
   totalCost: 0,
@@ -37,10 +41,13 @@ const cartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, count: 1 });
       }
-      state.totalCost += action.payload.price;
+      state.totalCost = calcTotalCost(state.items);
     },
-    removeItem: (state, action: PayloadAction<number>) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+    removeItem: (state, action: PayloadAction<CartItem>) => {
+      state.items = state.items.filter(
+        (item) => item.id != action.payload.id || item.weight != action.payload.weight,
+      );
+      state.totalCost = calcTotalCost(state.items);
     },
     clearCart: (state) => {
       (state.items = []), (state.totalCost = 0);

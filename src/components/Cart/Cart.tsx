@@ -16,7 +16,7 @@ const Cart = (): JSX.Element => {
             ))}
           </div>
           <div className="items-number">Number</div>
-          <div className="items-cost">Total Cost: {totalCost}</div>
+          <div className="items-cost">Total Cost: {totalCost} &#8381;</div>
         </div>
       </div>
     </div>
