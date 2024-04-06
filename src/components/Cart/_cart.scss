@@ -1,8 +1,4 @@
 .cart {
-&-title {
-    font-size: 2rem;
-    padding: 5px;
-}
 
 &-item {
     display: grid;
@@ -17,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     button {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin: 0;
     }
     margin-top: 15px;
@@ -25,8 +21,15 @@
 
 &-back {
     margin-top: 10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-left: 0;
+}
+
+&-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    padding: 5px;
 }
 
 button {
@@ -34,7 +37,7 @@ button {
 }
 
 .items-cost {
-    font-size: 2rem;
+    font-size: 1.8rem;
     background-color: rgba(255, 255, 255, 0.5);
 }
 }

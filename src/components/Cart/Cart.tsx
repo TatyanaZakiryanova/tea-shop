@@ -16,7 +16,12 @@ const Cart = (): JSX.Element => {
   return (
     <div className="wrapper">
       <div className="cart">
-        <h2 className="cart-title">Cart</h2>
+        <div className="cart-header">
+          <h2 className="cart-title">Cart</h2>
+          <button className="clear-cart" onClick={onClickClearCart}>
+            Clear cart
+          </button>
+        </div>
         <div className="cart-items">
           <div className="cart-item">
             {items.map((item: CartItem) => (
@@ -26,13 +31,13 @@ const Cart = (): JSX.Element => {
         </div>
         <div className="cart-inform">
           <div className="items-cost">Total cost: {totalCost} &#8381;</div>
-          <button className="clear-cart" onClick={onClickClearCart}>
-            Clear cart
-          </button>
+          <button className="order-button">Place an order</button>
         </div>
-        <Link to="/" className="back-link">
-          <button className="cart-back">← Back</button>
-        </Link>
+        <div className="cart-navigation">
+          <Link to="/" className="back-link">
+            <button className="cart-back">← Back</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
