@@ -27,12 +27,10 @@ const Cart = (): JSX.Element => {
             Clear cart
           </button>
         </div>
-        <div className="cart-items">
-          <div className="cart-item">
-            {items.map((item: CartItem) => (
-              <ItemInCart key={uuidv4()} {...item} />
-            ))}
-          </div>
+        <div className="cart-item">
+          {items.map((item: CartItem) => (
+            <ItemInCart key={uuidv4()} {...item} />
+          ))}
         </div>
         <div className="cart-inform">
           <button className="items-cost">Total cost: {totalCost} &#8381;</button>

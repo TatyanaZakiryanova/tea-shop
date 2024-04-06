@@ -17,8 +17,11 @@
     &-title {
         font-weight: bold;
     }
-    .tea-price {
-        font-weight: bold;
+    &-inform {
+        .tea-price {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }        
     }
  }
 

@@ -39,7 +39,10 @@ const Main = (): JSX.Element => {
         setItems(res.data);
         setIsLoaded(true);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setIsLoaded(true);
+        alert('Error, try again later');
+      });
   }, [categoryIndex, sortType, searchValue]);
 
   return (
