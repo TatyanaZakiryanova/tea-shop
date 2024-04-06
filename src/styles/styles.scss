@@ -55,3 +55,9 @@ button {
   li {
     list-style-type: none;
   }
+
+  .cart-add {
+    &:active {
+        background-color: rgb(112, 176, 149);
+    }
+  }
