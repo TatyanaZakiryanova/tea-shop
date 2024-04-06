@@ -55,7 +55,7 @@ export const TeaCard: React.FC<TeaProps> = ({
             </ul>
           </div>
           <button onClick={onClickAddItem} className="cart-add">
-            + Add to cart
+            Add to cart
           </button>
         </div>
       </div>

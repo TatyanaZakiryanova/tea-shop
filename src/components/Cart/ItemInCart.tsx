@@ -46,7 +46,7 @@ const ItemInCart: React.FC<CartItem> = ({
           </h4>
         </div>
         <button className="delete-item" onClick={onClickRemoveItem}>
-          X Delete item
+          Delete item
         </button>
       </div>
     </>

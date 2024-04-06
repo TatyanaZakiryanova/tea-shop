@@ -3,6 +3,7 @@ import { CartItem, clearCart } from '../../redux/cartSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import ItemInCart from './ItemInCart';
 import { v4 as uuidv4 } from 'uuid';
+import EmptyCart from './EmptyCart';
 
 const Cart = (): JSX.Element => {
   const items = useAppSelector((state) => state.cartReducer.items);
@@ -12,6 +13,10 @@ const Cart = (): JSX.Element => {
   const onClickClearCart = () => {
     dispatch(clearCart());
   };
+
+  if (!totalCost) {
+    return <EmptyCart />;
+  }
 
   return (
     <div className="wrapper">
@@ -30,7 +35,7 @@ const Cart = (): JSX.Element => {
           </div>
         </div>
         <div className="cart-inform">
-          <div className="items-cost">Total cost: {totalCost} &#8381;</div>
+          <button className="items-cost">Total cost: {totalCost} &#8381;</button>
           <button className="order-button">Place an order</button>
         </div>
         <div className="cart-navigation">

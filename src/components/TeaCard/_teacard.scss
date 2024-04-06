@@ -30,3 +30,9 @@
             cursor: pointer;
         }
     }
+
+    .cart-add {
+        &:active {
+            background-color:  rgb(88, 175, 139);
+        }
+    }
