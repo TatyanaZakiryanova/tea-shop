@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { CartItem, clearCart } from '../../redux/cartSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import ItemInCart from './ItemInCart';
+import { v4 as uuidv4 } from 'uuid';
 
 const Cart = (): JSX.Element => {
   const items = useAppSelector((state) => state.cartReducer.items);
@@ -19,7 +20,7 @@ const Cart = (): JSX.Element => {
         <div className="cart-items">
           <div className="cart-item">
             {items.map((item: CartItem) => (
-              <ItemInCart key={item.id} {...item} />
+              <ItemInCart key={uuidv4()} {...item} />
             ))}
           </div>
         </div>
