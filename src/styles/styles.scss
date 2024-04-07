@@ -50,6 +50,14 @@ button {
         justify-items: center;
         border-radius: 15px;
         padding: 10px;
+        .error-status {
+            padding: 150px;
+            font-size: 2rem;
+            text-align: center;
+            &-icon {
+                font-size: 5rem;
+            }
+        }
     }
 }
 

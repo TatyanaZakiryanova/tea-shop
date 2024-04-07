@@ -36,7 +36,7 @@ const ItemInCart: React.FC<CartItem> = ({
           <h4 className="tea-rating">Rating: {rating}</h4>
           <h4 className="tea-weight">Weight: {weight} g</h4>
           <h4 className="tea-amount">
-            Amount: {count}{' '}
+            Number: {count}{' '}
             <button className="plus-amount" onClick={onClickPlusAmount}>
               +
             </button>

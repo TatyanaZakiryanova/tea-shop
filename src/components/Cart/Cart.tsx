@@ -33,7 +33,7 @@ const Cart = (): JSX.Element => {
           ))}
         </div>
         <div className="cart-inform">
-          <button className="items-cost">Total cost: {totalCost} &#8381;</button>
+          <button className="items-cost">Total: {totalCost} &#8381;</button>
           <button className="order-button">Place an order</button>
         </div>
         <div className="cart-navigation">
