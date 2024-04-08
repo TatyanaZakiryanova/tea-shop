@@ -28,16 +28,17 @@
     button {
         margin: 2px;
         font-size: 1rem;
-        transition: all 0.25s ease-in-out;
+        transition: all 0.2s ease-in-out;
         &:hover {
             background-color:  rgb(44, 125, 91);
             cursor: pointer;
+            transform: scale(0.95);
         }
     }
 
     .cart-add {
           &:active {
-        background-color: rgb(114, 187, 140);
-        transform: scale(0.9);
+        background-color: rgb(145, 212, 168);
+        color: white;
         }
     }

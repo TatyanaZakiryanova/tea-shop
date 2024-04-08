@@ -11,6 +11,8 @@ const EmptyCart = () => {
           Cart is empty
         </h1>
         <br />
+        <p>Return to the main page to order items:</p>
+        <br />
         <Link to="/" className="back-link">
           <button className="empty-cart-back">← Back</button>
         </Link>

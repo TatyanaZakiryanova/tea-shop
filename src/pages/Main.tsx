@@ -10,8 +10,7 @@ import { MdOutlineErrorOutline } from 'react-icons/md';
 
 const Main = (): JSX.Element => {
   const sortType = useAppSelector((state) => state.filterReducer.sort);
-  const categoryIndex = useAppSelector((state) => state.filterReducer.categoryIndex);
-  const searchValue = useAppSelector((state) => state.filterReducer.searchValue);
+  const { categoryIndex, searchValue } = useAppSelector((state) => state.filterReducer);
   const { items, status } = useAppSelector((state) => state.teaReducer);
 
   const dispatch = useAppDispatch();
@@ -19,8 +18,6 @@ const Main = (): JSX.Element => {
   const onSelectCategory = (index: number) => {
     dispatch(setCategoryIndex(index));
   };
-
-  /*const [items, setItems] = useState<TeaProps[]>([]);*/
 
   const fetchData = async () => {
     const sortBy = sortType.sortParam;
@@ -32,32 +29,14 @@ const Main = (): JSX.Element => {
     const category = categoryIndex > 0 ? `category=${categoryIndex}` : '';
     const search = searchValue;
 
-    /*axios
-      .get(
-        `https://6608a863a2a5dd477b14ab61.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
-      )
-      .then((res) => {
-        setItems(res.data);
-        setIsLoaded(true);
-      })
-      .catch((err) => {
-        setIsLoaded(true);
-        alert('Error, try again later');
-      });
-  }, [categoryIndex, sortType, searchValue]);*/
-
-    try {
-      dispatch(
-        fetchTeas({
-          order,
-          category,
-          search,
-          sortBy,
-        }),
-      );
-    } catch (error) {
-      console.log('Error:', error);
-    }
+    dispatch(
+      fetchTeas({
+        order,
+        category,
+        search,
+        sortBy,
+      }),
+    );
   };
 
   useEffect(() => {
@@ -77,7 +56,7 @@ const Main = (): JSX.Element => {
               <div className="error-status">
                 <MdOutlineErrorOutline className="error-status-icon" />
                 <br />
-                <p>An error occurred. Please try again later.</p>
+                <p>No items found. Please try again later.</p>
               </div>
             ) : (
               <>

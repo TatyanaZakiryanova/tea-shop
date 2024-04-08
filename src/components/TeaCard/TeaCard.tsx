@@ -1,7 +1,16 @@
 import { useState } from 'react';
-import { TeaProps } from '../../App';
 import { CartItem, addItem } from '../../redux/cartSlice';
-import { useAppDispatch } from '../../redux/store';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+
+export type TeaProps = {
+  id: number;
+  imageUrl: string;
+  title: string;
+  type: string;
+  rating: number;
+  weight: number[];
+  price: number;
+};
 
 export const TeaCard: React.FC<TeaProps> = ({
   id,
@@ -20,6 +29,8 @@ export const TeaCard: React.FC<TeaProps> = ({
 
   const dispatch = useAppDispatch();
 
+  const [addedToCart, setAddedToCart] = useState<string>('Add to cart');
+
   const onClickAddItem = () => {
     const item: CartItem = {
       id,
@@ -32,6 +43,7 @@ export const TeaCard: React.FC<TeaProps> = ({
       count: 0,
     };
     dispatch(addItem(item));
+    setAddedToCart('Added to cart');
   };
 
   return (
@@ -59,7 +71,7 @@ export const TeaCard: React.FC<TeaProps> = ({
             </ul>
           </div>
           <button onClick={onClickAddItem} className="cart-add">
-            Add to cart
+            {addedToCart}
           </button>
         </div>
       </div>

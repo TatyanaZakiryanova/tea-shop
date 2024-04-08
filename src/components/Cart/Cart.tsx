@@ -10,6 +10,7 @@ const Cart = (): JSX.Element => {
   const totalCost = useAppSelector((state) => state.cartReducer.totalCost);
 
   const dispatch = useAppDispatch();
+
   const onClickClearCart = () => {
     dispatch(clearCart());
   };
