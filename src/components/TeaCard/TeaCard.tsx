@@ -29,8 +29,6 @@ export const TeaCard: React.FC<TeaProps> = ({
 
   const dispatch = useAppDispatch();
 
-  const [addedToCart, setAddedToCart] = useState<string>('Add to cart');
-
   const onClickAddItem = () => {
     const item: CartItem = {
       id,
@@ -43,8 +41,15 @@ export const TeaCard: React.FC<TeaProps> = ({
       count: 0,
     };
     dispatch(addItem(item));
-    setAddedToCart('Added to cart');
   };
+
+  const selectAddedCartItem = (id: number, weight: number) =>
+    useAppSelector((state) =>
+      state.cartReducer.items.find((obj) => obj.id === id && obj.weight === weight),
+    );
+
+  const addedCartItem = selectAddedCartItem(id, weight[activeWeight]);
+  const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
 
   return (
     <div className="card-wrapper">
@@ -71,7 +76,7 @@ export const TeaCard: React.FC<TeaProps> = ({
             </ul>
           </div>
           <button onClick={onClickAddItem} className="cart-add">
-            {addedToCart}
+            {addedValue}
           </button>
         </div>
       </div>
