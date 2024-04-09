@@ -7,7 +7,7 @@ export const Categories: React.FC<selectCategoryProps> = ({
   value,
   onSelectCategory,
 }): JSX.Element => {
-  const categories: string[] = ['All', 'Black', 'Green'];
+  const categories: string[] = ['All', 'Black', 'Green', 'Herbal'];
 
   return (
     <div className="categories">

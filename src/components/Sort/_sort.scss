@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .sort {
     position: relative;
     font-size: 1rem;
@@ -20,7 +22,7 @@
         }
         span {
             cursor: pointer;
-            font-weight: bold;
+            font-weight: $bold;
         }
     }
     &-popup {
@@ -30,13 +32,13 @@
         ul {
             display: flex;
             flex-direction: column;
-            background-color:   rgb(44, 125, 91);
-            border-radius: 15px;
+            background-color: $highlight;
+            border-radius: $radius;
             li {
                 cursor: pointer;
                 padding: 10px 10px;
-                font-size: 1.5rem;
-                border-radius: 15px;
+                font-size: $size;
+                border-radius: $radius;
                 transition: all 0.15s ease-in-out;
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.5);

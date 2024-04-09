@@ -1,4 +1,5 @@
 @import './all';
+@import './variables';
 
 * {
     margin: 0;
@@ -25,12 +26,12 @@ button {
     font-size: 1.2rem;
     padding: 5px;
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: $radius;
 }
 
 .active-button {
     border: none;
-    background-color: rgb(44, 125, 91);
+    background-color: $highlight;
     color: white;
 }
 
@@ -46,9 +47,9 @@ button {
     &-items {
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(215px,1fr));
-        background-color: white;
+        background-color: $background;
         justify-items: center;
-        border-radius: 15px;
+        border-radius: $radius;
         padding: 10px;
         .error-status {
             padding: 150px;

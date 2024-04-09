@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .card {
     display: flex;
     flex-direction: column;
@@ -12,15 +14,15 @@
     }
     }
     h4 {
-        font-weight: bold;
+        font-weight: $bold;
     }
     &-title {
-        font-weight: bold;
+        font-weight: $bold;
     }
     &-inform {
         .tea-price {
-            font-weight: bold;
-            font-size: 1.5rem;
+            font-weight: $bold;
+            font-size: $size;
         }        
     }
  }
@@ -30,7 +32,7 @@
         font-size: 1rem;
         transition: all 0.2s ease-in-out;
         &:hover {
-            background-color:  rgb(44, 125, 91);
+            background-color: $highlight;
             cursor: pointer;
             transform: scale(0.95);
         }

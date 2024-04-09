@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 const EmptyCart = () => {
   return (
     <div className="wrapper">
+      <div className="cart-header">
+        <h2 className="cart-title">Cart</h2>
+      </div>
       <div className="empty-cart">
         <h1>
           <GiShoppingCart className="empty-cart-icon" />
