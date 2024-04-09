@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+.display {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    margin-bottom: 30px;
+    .main {
+        text-align: center;
+        .img {
+            width: 180px;
+            height: 165px;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                transform: scale(0.9);
+        }
+       }
+       .title {
+        font-weight: $bold;
+        font-size: $size;
+       }
+    }
+    .inform {
+        text-align: center;
+        font-size: 1.2rem;
+        .price {
+            font-weight: $bold;
+        }
+    }
+    .amount {
+        font-size: $size;
+        font-weight: $bold;
+    }
+    .delete {
+        font-size: $size;
+    }
+}

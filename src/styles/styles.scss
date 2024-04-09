@@ -1,4 +1,10 @@
-@import './all';
+@import '../components/Header/header';
+@import '../components/Sort/sort';
+@import '../components/TeaCard/teacard';
+@import '../components/Categories/categories';
+@import '../components/Cart/cart';
+@import '../components/DataNotFound/datanotfound';
+@import '../components/Search/search';
 @import './variables';
 
 * {

@@ -4,7 +4,6 @@ import { Sort } from '../components/Sort/Sort';
 import { TeaCard } from '../components/TeaCard/TeaCard';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { setCategoryIndex } from '../redux/filterSlice';
-import { Spinner } from '../components/Spinner/Spinner';
 import { fetchTeas } from '../redux/teaSlice';
 import { MdOutlineErrorOutline } from 'react-icons/md';
 import Skeleton from '../components/TeaCard/Skeleton';

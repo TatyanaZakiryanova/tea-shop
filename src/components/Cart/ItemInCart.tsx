@@ -1,5 +1,6 @@
 import { CartItem, addItem, minusAmount, removeItem } from '../../redux/cartSlice';
 import { useAppDispatch } from '../../redux/store';
+import styles from './ItemInCart.module.scss';
 
 const ItemInCart: React.FC<CartItem> = ({
   id,
@@ -27,27 +28,28 @@ const ItemInCart: React.FC<CartItem> = ({
 
   return (
     <>
-      <div className="card">
-        <img className="card-image" src={imageUrl} />
-        <h3 className="card-title">{title}</h3>
-        <div className="card-inform">
-          <h4 className="tea-price">{price} &#8381;</h4>
-          <h4 className="tea-type">Type: {type} tea</h4>
-          <h4 className="tea-rating">Rating: {rating}</h4>
-          <h4 className="tea-weight">Weight: {weight} g</h4>
-          <h4 className="tea-amount">
-            Number: {count}{' '}
-            <button className="plus-amount" onClick={onClickPlusAmount}>
-              +
-            </button>
-            <button disabled={count === 1} className="minus-amount" onClick={onClickMinusAmount}>
+      <div className={styles.card}>
+        <div className={styles.display}>
+          <div className={styles.main}>
+            <img className={styles.img} src={imageUrl} />
+            <h3 className={styles.title}>{title}</h3>
+          </div>
+          <div className={styles.inform}>
+            <h4 className={styles.price}>{price} &#8381;</h4>
+            <h4 className={styles.type}>Type: {type} tea</h4>
+            <h4 className={styles.rating}>Rating: {rating}</h4>
+            <h4 className={styles.weight}>Weight: {weight} g</h4>
+          </div>
+          <h4 className={styles.amount}>
+            Number: {count} <button onClick={onClickPlusAmount}>+</button>
+            <button disabled={count === 1} onClick={onClickMinusAmount}>
               -
             </button>
           </h4>
+          <button className={styles.delete} onClick={onClickRemoveItem}>
+            Delete item
+          </button>
         </div>
-        <button className="delete-item" onClick={onClickRemoveItem}>
-          Delete item
-        </button>
       </div>
     </>
   );
