@@ -1,12 +1,10 @@
 @import '../../styles/variables';
 
 .display {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px,1fr));
     margin-bottom: 30px;
-    .main {
+    .main  {
         text-align: center;
         .img {
             width: 180px;
@@ -24,15 +22,20 @@
     .inform {
         text-align: center;
         font-size: 1.2rem;
+        align-self: center;
+        justify-self: center;
         .price {
             font-weight: $bold;
         }
     }
     .amount {
+        align-self: center;
         font-size: $size;
         font-weight: $bold;
+        justify-self: center;
     }
     .delete {
-        font-size: $size;
+        align-self: center;
+        justify-self: center;
     }
 }
