@@ -7,6 +7,7 @@ import { setCategoryIndex } from '../redux/filterSlice';
 import { Spinner } from '../components/Spinner/Spinner';
 import { fetchTeas } from '../redux/teaSlice';
 import { MdOutlineErrorOutline } from 'react-icons/md';
+import Skeleton from '../components/TeaCard/Skeleton';
 
 const Main = (): JSX.Element => {
   const sortType = useAppSelector((state) => state.filterReducer.sort);
@@ -60,15 +61,13 @@ const Main = (): JSX.Element => {
               </div>
             ) : (
               <>
-                {status === 'loading' ? (
-                  <Spinner />
-                ) : (
-                  items.map((obj) => (
-                    <li key={obj.id}>
-                      <TeaCard {...obj} />
-                    </li>
-                  ))
-                )}
+                {status === 'loading'
+                  ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+                  : items.map((obj) => (
+                      <li key={obj.id}>
+                        <TeaCard {...obj} />
+                      </li>
+                    ))}
               </>
             )}
           </>
