@@ -6,19 +6,22 @@
     &-label {
         display: flex;
         @media screen and (max-width: 414px) {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         @media screen and (max-width: 390px) {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
         }
         @media screen and (max-width: 376px) {
-            font-size: 0.6rem;
+            font-size: 0.8rem;
         }
         @media screen and (max-width: 360px){
-            font-size: 0.6rem;
+            font-size: 0.7rem;
         }
         .sort-icon {
             font-size: 29px;
+            @media screen and (max-width: 360px){
+                font-size: 1.2rem;
+            }
         }
         span {
             cursor: pointer;
