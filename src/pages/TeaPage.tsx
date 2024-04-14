@@ -44,7 +44,6 @@ const TeaPage = () => {
         <h4 className={styles.price}>{tea.price} ₽ per 100 grams</h4>
         <p>The price of tea will be calculated depending on the selected weight.</p>
         <h4 className={styles.type}>Type: {tea.type} tea</h4>
-        <h4 className={styles.description}>{tea.description}</h4>
         <div className={styles.back}>
           <Link to="/">
             <button>Back to the main page</button>

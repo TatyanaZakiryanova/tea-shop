@@ -9,6 +9,7 @@ export type FilterSlice = {
   categoryIndex: number;
   sort: SortName;
   searchValue: string;
+  currentPage: number;
 };
 
 const initialState: FilterSlice = {
@@ -18,6 +19,7 @@ const initialState: FilterSlice = {
     sortParam: 'title',
   },
   searchValue: '',
+  currentPage: 1,
 };
 
 const filterSlice = createSlice({
@@ -33,8 +35,12 @@ const filterSlice = createSlice({
     setSearchValue: (state, action: PayloadAction<string>) => {
       state.searchValue = action.payload;
     },
+    setCurrentPage(state, action: PayloadAction<number>) {
+      state.currentPage = action.payload;
+    },
   },
 });
 
-export const { setCategoryIndex, setSortParam, setSearchValue } = filterSlice.actions;
+export const { setCategoryIndex, setSortParam, setSearchValue, setCurrentPage } =
+  filterSlice.actions;
 export default filterSlice.reducer;

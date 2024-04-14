@@ -3,20 +3,27 @@ import { Categories } from '../components/Categories/Categories';
 import { Sort } from '../components/Sort/Sort';
 import { TeaCard } from '../components/TeaCard/TeaCard';
 import { useAppDispatch, useAppSelector } from '../redux/store';
-import { setCategoryIndex } from '../redux/filterSlice';
+import { setCategoryIndex, setCurrentPage } from '../redux/filterSlice';
 import { fetchTeas } from '../redux/teaSlice';
 import { MdOutlineErrorOutline } from 'react-icons/md';
 import Skeleton from '../components/TeaCard/Skeleton';
+import Pagination from '../components/Pagination/Pagination';
 
 const Main = (): JSX.Element => {
   const sortType = useAppSelector((state) => state.filterReducer.sort);
-  const { categoryIndex, searchValue } = useAppSelector((state) => state.filterReducer);
+  const { categoryIndex, searchValue, currentPage } = useAppSelector(
+    (state) => state.filterReducer,
+  );
   const { items, status } = useAppSelector((state) => state.teaReducer);
 
   const dispatch = useAppDispatch();
 
   const onSelectCategory = (index: number) => {
     dispatch(setCategoryIndex(index));
+  };
+
+  const onChangePage = (page: number) => {
+    dispatch(setCurrentPage(page));
   };
 
   const fetchData = async () => {
@@ -35,13 +42,14 @@ const Main = (): JSX.Element => {
         category,
         search,
         sortBy,
+        currentPage: String(currentPage),
       }),
     );
   };
 
   useEffect(() => {
     fetchData();
-  }, [categoryIndex, sortType, searchValue]);
+  }, [categoryIndex, sortType, searchValue, currentPage]);
 
   return (
     <div className="wrapper">
@@ -71,6 +79,7 @@ const Main = (): JSX.Element => {
             )}
           </>
         </div>
+        <Pagination currentPage={currentPage} onChangePage={onChangePage} />
       </div>
     </div>
   );

@@ -22,14 +22,15 @@ export type SearchParams = {
   category: string;
   search: string;
   sortBy: string;
+  currentPage: string;
 };
 
 export const fetchTeas = createAsyncThunk<Tea[], SearchParams>(
   'tea/fetchTeasStatus',
   async (params) => {
-    const { order, category, search, sortBy } = params;
+    const { order, category, search, sortBy, currentPage } = params;
     const { data } = await axios.get(
-      `https://6608a863a2a5dd477b14ab61.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
+      `https://6608a863a2a5dd477b14ab61.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}&search=${search}&page=${currentPage}&limit=${10}`,
     );
     return data;
   },
