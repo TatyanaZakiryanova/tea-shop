@@ -3,7 +3,7 @@ import { calcTotalCost } from '../components/utils/CalculateCost';
 import { GetCartItems } from '../components/utils/GetCartItems';
 
 export type CartItem = {
-  id: number;
+  id: string;
   imageUrl: string;
   title: string;
   type: string;

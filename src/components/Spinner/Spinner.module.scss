@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.spinner {
+        text-align: center;
+        margin: 10px 10px;
+        padding: 110px;
+        font-size: 2rem;
+        background-color: $background;
+        border-radius: $radius;
+        .icon {
+          font-size: 5rem;
+          animation: spin 2s linear infinite;
+      }
+    }
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

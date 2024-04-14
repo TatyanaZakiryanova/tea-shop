@@ -3,6 +3,7 @@ import { Header } from './components/Header/Header';
 import Main from './pages/Main';
 import NotFound from './pages/NotFound';
 import CartPage from './pages/CartPage';
+import TeaPage from './pages/TeaPage';
 
 export const App = (): JSX.Element => {
   return (
@@ -11,6 +12,7 @@ export const App = (): JSX.Element => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="cart" element={<CartPage />} />
+        <Route path="tea/:id" element={<TeaPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

@@ -2,7 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export type Tea = {
-  id: number;
+  id: string;
   imageUrl: string;
   title: string;
   type: string;

@@ -1,0 +1,30 @@
+@import '../styles/variables';
+
+.wrapper {
+    margin: 10px 10px;
+    background-color: $background;
+    border-radius: $radius;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    .img {
+        width: 350px;
+        height: 350px;
+        border-radius: $radius;
+    }
+    .inform {
+        display: flex;
+        flex-direction: column;
+        font-size: $size;
+        padding: 50px;
+        .price {
+            font-weight: $bold;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+        .back {
+            margin-top: 80px;
+        }
+    }
+}

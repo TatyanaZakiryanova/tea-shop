@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { CartItem, addItem } from '../../redux/cartSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { Link } from 'react-router-dom';
 
 export type TeaProps = {
-  id: number;
+  id: string;
   imageUrl: string;
   title: string;
   type: string;
@@ -43,7 +44,7 @@ export const TeaCard: React.FC<TeaProps> = ({
     dispatch(addItem(item));
   };
 
-  const selectAddedCartItem = (id: number, weight: number) =>
+  const selectAddedCartItem = (id: string, weight: number) =>
     useAppSelector((state) =>
       state.cartReducer.items.find((obj) => obj.id === id && obj.weight === weight),
     );
@@ -54,7 +55,9 @@ export const TeaCard: React.FC<TeaProps> = ({
   return (
     <div className="card-wrapper">
       <div className="card">
-        <img className="card-image" src={imageUrl} />
+        <Link key={id} to={`/tea/${id}`}>
+          <img className="card-image" src={imageUrl} title="Show description" />
+        </Link>
         <h3 className="card-title">{title}</h3>
         <div className="card-inform">
           <h4 className="tea-price">{price} &#8381;</h4>
