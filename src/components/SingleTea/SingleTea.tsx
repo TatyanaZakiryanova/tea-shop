@@ -35,9 +35,6 @@ const TeaPage = () => {
   }
 
   const onClickAddItem = () => {
-    if (tea.weight[activeWeight] === 200) {
-      tea.price *= 2;
-    }
     const item: CartItem = {
       id: tea.id,
       imageUrl: tea.imageUrl,

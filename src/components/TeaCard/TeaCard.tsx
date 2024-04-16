@@ -24,10 +24,6 @@ export const TeaCard: React.FC<TeaProps> = ({
 }) => {
   const [activeWeight, setActiveWeight] = useState<number>(0);
 
-  if (weight[activeWeight] === 200) {
-    price *= 2;
-  }
-
   const dispatch = useAppDispatch();
 
   const onClickAddItem = () => {
@@ -61,6 +57,7 @@ export const TeaCard: React.FC<TeaProps> = ({
         <h3 className="card-title">{title}</h3>
         <div className="card-inform">
           <h4 className="tea-price">{price} &#8381;</h4>
+          <p>per 100 grams</p>
           <h4 className="tea-type">Type: {type} tea</h4>
           <h4 className="tea-rating">Rating: {rating}</h4>
           <div className="weight-selector">
