@@ -8,9 +8,9 @@
     justify-content: space-evenly;
     flex-flow: row wrap;
     .img {
-        width: 365px;
+        width: 350px;
         height: 350px;
-        padding: 10px;
+        padding: 5px;
         border-radius: $radius;
     }
     .inform {
@@ -18,14 +18,33 @@
         flex-direction: column;
         font-size: $size;
         padding: 50px;
+        button {
+            margin-top: 10px;
+            max-width: 200px;
+            display: flex;
+            justify-content: center;
+            .icon {
+                margin-right: 5px;
+            }
+        }
         .price {
             font-weight: $bold;
+        }
+        .type {
+            margin-top: 10px;
+        }
+        .weight {
+            display: flex;
         }
         p {
             font-size: 0.8rem;
         }
-        .back {
+        .backbutton {
             margin-top: 80px;
+            border: 1px black dashed;
+        }
+        .back {
+            text-decoration: none;
         }
     }
 }
