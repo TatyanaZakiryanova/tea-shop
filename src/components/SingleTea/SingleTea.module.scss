@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@import '../../styles/variables';
 
 .wrapper {
     margin: 10px 10px;
@@ -8,8 +8,9 @@
     justify-content: space-evenly;
     flex-flow: row wrap;
     .img {
-        width: 350px;
+        width: 365px;
         height: 350px;
+        padding: 10px;
         border-radius: $radius;
     }
     .inform {
