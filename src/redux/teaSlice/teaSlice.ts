@@ -1,29 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-
-export type Tea = {
-  id: string;
-  imageUrl: string;
-  title: string;
-  type: string;
-  rating: number;
-  weight: number[];
-  price: number;
-  category: number;
-};
-
-export interface TeaState {
-  items: Tea[];
-  status: string;
-}
-
-export type SearchParams = {
-  order: string;
-  category: string;
-  search: string;
-  sortBy: string;
-  currentPage: string;
-};
+import { SearchParams, Tea, TeaState } from './types';
 
 export const fetchTeas = createAsyncThunk<Tea[], SearchParams>(
   'tea/fetchTeasStatus',

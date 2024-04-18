@@ -1,7 +1,4 @@
-type selectCategoryProps = {
-  value: number;
-  onSelectCategory: (index: number) => void;
-};
+import { selectCategoryProps } from './types';
 
 export const Categories: React.FC<selectCategoryProps> = ({
   value,

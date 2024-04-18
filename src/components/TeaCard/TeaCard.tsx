@@ -1,17 +1,9 @@
 import { useState } from 'react';
-import { CartItem, addItem } from '../../redux/cartSlice';
+import { addItem } from '../../redux/cartSlice/cartSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { Link } from 'react-router-dom';
-
-export type TeaProps = {
-  id: string;
-  imageUrl: string;
-  title: string;
-  type: string;
-  rating: number;
-  weight: number[];
-  price: number;
-};
+import { TeaProps } from './types';
+import { CartItem } from '../../redux/cartSlice/types';
 
 export const TeaCard: React.FC<TeaProps> = ({
   id,

@@ -1,6 +1,6 @@
 import { LiaSearchSolid } from 'react-icons/lia';
 import { useAppDispatch } from '../../redux/store';
-import { setSearchValue } from '../../redux/filterSlice';
+import { setSearchValue } from '../../redux/filterSlice/filterSlice';
 import { ChangeEvent, useCallback, useState } from 'react';
 import debounce from 'lodash.debounce';
 

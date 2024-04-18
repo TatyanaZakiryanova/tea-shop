@@ -1,4 +1,5 @@
-import { CartItem, addItem, minusAmount, removeItem } from '../../redux/cartSlice';
+import { addItem, minusAmount, removeItem } from '../../redux/cartSlice/cartSlice';
+import { CartItem } from '../../redux/cartSlice/types';
 import { useAppDispatch } from '../../redux/store';
 import styles from './ItemInCart.module.scss';
 

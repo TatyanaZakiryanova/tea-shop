@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { CartItem, clearCart } from '../../redux/cartSlice';
+import { clearCart } from '../../redux/cartSlice/cartSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import ItemInCart from './ItemInCart';
 import { v4 as uuidv4 } from 'uuid';
 import EmptyCart from './EmptyCart';
+import { CartItem } from '../../redux/cartSlice/types';
 
 const Cart = (): JSX.Element => {
   const items = useAppSelector((state) => state.cartReducer.items);

@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { SortName, setSortParam } from '../../redux/filterSlice';
+import { setSortParam } from '../../redux/filterSlice/filterSlice';
 import { PiSortAscendingLight } from 'react-icons/pi';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { SortName } from '../../redux/filterSlice/types';
 
 const sort: Array<SortName> = [
   {

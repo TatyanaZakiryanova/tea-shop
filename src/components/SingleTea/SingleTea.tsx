@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Spinner } from '../Spinner/Spinner';
 import styles from './SingleTea.module.scss';
-import { TeaProps } from '../TeaCard/TeaCard';
-import { CartItem, addItem } from '../../redux/cartSlice';
+import { addItem } from '../../redux/cartSlice/cartSlice';
 import { useAppDispatch } from '../../redux/store';
 import { FaCartShopping } from 'react-icons/fa6';
+import { CartItem } from '../../redux/cartSlice/types';
+import { TeaProps } from '../TeaCard/types';
 
 const TeaPage = () => {
   const [tea, setTea] = useState<TeaProps>();
