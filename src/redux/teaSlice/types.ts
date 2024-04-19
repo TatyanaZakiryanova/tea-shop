@@ -9,9 +9,15 @@ export type Tea = {
   category: number;
 };
 
+export enum Status {
+  LOADING = 'loading',
+  SUCCESS = 'success',
+  ERROR = 'error',
+}
+
 export interface TeaState {
   items: Tea[];
-  status: string;
+  status: Status;
 }
 
 export type SearchParams = {

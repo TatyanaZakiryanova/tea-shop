@@ -1,6 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { SearchParams, Tea, TeaState } from './types';
+import { SearchParams, Status, Tea, TeaState } from './types';
 
 export const fetchTeas = createAsyncThunk<Tea[], SearchParams>(
   'tea/fetchTeasStatus',
@@ -15,7 +15,7 @@ export const fetchTeas = createAsyncThunk<Tea[], SearchParams>(
 
 const initialState: TeaState = {
   items: [],
-  status: 'loading',
+  status: Status.LOADING,
 };
 
 const teaSlice = createSlice({
@@ -29,17 +29,17 @@ const teaSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchTeas.pending, (state) => {
       state.items = [];
-      state.status = 'loading';
+      state.status = Status.LOADING;
     });
 
     builder.addCase(fetchTeas.fulfilled, (state, action) => {
       state.items = action.payload;
-      state.status = 'success';
+      state.status = Status.SUCCESS;
     });
 
     builder.addCase(fetchTeas.rejected, (state) => {
       state.items = [];
-      state.status = 'error';
+      state.status = Status.ERROR;
     });
   },
 });
