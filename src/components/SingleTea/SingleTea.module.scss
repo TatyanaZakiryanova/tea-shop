@@ -23,6 +23,10 @@
             max-width: 200px;
             display: flex;
             justify-content: center;
+            &:active {
+                background-color: rgb(145, 212, 168);
+                color: white;
+            }
             .icon {
                 margin-right: 5px;
             }
@@ -32,6 +36,10 @@
         }
         .type {
             margin-top: 10px;
+        }
+        .description {
+            margin: 20px 0;
+            font-size: 20px;
         }
         .weight {
             display: flex;

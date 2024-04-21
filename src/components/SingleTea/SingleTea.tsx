@@ -7,10 +7,19 @@ import { addItem } from '../../redux/cartSlice/cartSlice';
 import { useAppDispatch } from '../../redux/store';
 import { FaCartShopping } from 'react-icons/fa6';
 import { CartItem } from '../../redux/cartSlice/types';
-import { TeaProps } from '../TeaCard/types';
+import { IoIosLeaf } from 'react-icons/io';
 
 const TeaPage = () => {
-  const [tea, setTea] = useState<TeaProps>();
+  const [tea, setTea] = useState<{
+    id: string;
+    imageUrl: string;
+    title: string;
+    type: string;
+    weight: number[];
+    price: number;
+    rating: number;
+    description: string;
+  }>();
   const [activeWeight, setActiveWeight] = useState<number>(0);
   const dispatch = useAppDispatch();
 
@@ -59,6 +68,10 @@ const TeaPage = () => {
         </h4>
         <p>The price of tea will be calculated depending on the selected weight.</p>
         <h4 className={styles.type}>Type: {tea.type} tea</h4>
+        <p className={styles.description}>
+          <IoIosLeaf />
+          {tea.description}
+        </p>
         <ul className={styles.weight}>
           {tea.weight.map((grams, index) => (
             <li key={grams}>
