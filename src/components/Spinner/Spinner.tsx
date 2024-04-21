@@ -6,7 +6,7 @@ export const Spinner = () => {
     <div className={styles.spinner}>
       <PiSpinnerGapLight className={styles.icon} />
       <br />
-      Description is loading, please wait...
+      Loading, please wait...
     </div>
   );
 };
