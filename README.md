@@ -6,7 +6,7 @@ Online store of loose leaf tea. Features: sorting items, searching for items, ad
 
 ## Preview
 
-<img src="./src/assets/teapreview.PNG" alt="preview" width="1400" height="400">
+<img src="./src/assets/teapreview.PNG" alt="preview" width="1550" height="400">
 
 ## How to start project
 
