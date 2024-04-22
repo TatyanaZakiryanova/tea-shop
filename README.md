@@ -1,5 +1,5 @@
 # Tea Shop
-TS + React + Redux.  
+TS + React + Redux Toolkit.  
 <br />
 Online store of loose leaf tea. Features: sorting items, searching for items, adding items to cart.  
 <br />
