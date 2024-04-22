@@ -2,7 +2,7 @@
 
 Online store of loose leaf tea. Features: sorting items, searching for items, adding items to cart.  
 <br />
-Интернет магазин листового чая. Возможности: сортировка товаров, поиск товаров, добавление товаров в корзину.  
+Интернет-магазин листового чая. Возможности: сортировка товаров, поиск товаров, добавление товаров в корзину.  
 <br />
 Link: https://leafteashop.netlify.app/
 
