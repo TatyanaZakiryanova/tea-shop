@@ -1,17 +1,6 @@
-import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { SearchParams, Status, Tea, TeaState } from './types';
-
-export const fetchTeas = createAsyncThunk<Tea[], SearchParams>(
-  'tea/fetchTeasStatus',
-  async (params) => {
-    const { order, category, search, sortBy, currentPage } = params;
-    const { data } = await axios.get(
-      `https://6608a863a2a5dd477b14ab61.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}&search=${search}&page=${currentPage}&limit=${10}`,
-    );
-    return data;
-  },
-);
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { Status, Tea, TeaState } from './types';
+import { fetchTeas } from './asyncActions';
 
 const initialState: TeaState = {
   items: [],

@@ -4,13 +4,14 @@ import { Sort } from '../components/Sort/Sort';
 import { TeaCard } from '../components/TeaCard/TeaCard';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { setCategoryIndex, setCurrentPage } from '../redux/filterSlice/filterSlice';
-import { fetchTeas } from '../redux/teaSlice/teaSlice';
-import { MdOutlineErrorOutline } from 'react-icons/md';
 import Skeleton from '../components/TeaCard/Skeleton';
 import Pagination from '../components/Pagination/Pagination';
+import ItemsNotFound from '../components/ItemsNotFound/ItemsNotFound';
+import { fetchTeas } from '../redux/teaSlice/asyncActions';
 
 const Main = (): JSX.Element => {
   const sortType = useAppSelector((state) => state.filterReducer.sort);
+
   const { categoryIndex, searchValue, currentPage } = useAppSelector(
     (state) => state.filterReducer,
   );
@@ -51,37 +52,26 @@ const Main = (): JSX.Element => {
     fetchData();
   }, [categoryIndex, sortType, searchValue, currentPage]);
 
+  const skeleton = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
+  const teas = items.map((obj) => (
+    <li key={obj.id}>
+      <TeaCard {...obj} />
+    </li>
+  ));
+
   return (
-    <div className="wrapper">
-      <div className="content">
-        <div className="content-top">
-          <Categories value={categoryIndex} onSelectCategory={onSelectCategory} />
-          <Sort />
-        </div>
-        <div className="content-items">
-          <>
-            {status === 'error' ? (
-              <div className="error-status">
-                <MdOutlineErrorOutline className="error-status-icon" />
-                <br />
-                <p>No items found. Please try again later.</p>
-              </div>
-            ) : (
-              <>
-                {status === 'loading'
-                  ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-                  : items.map((obj) => (
-                      <li key={obj.id}>
-                        <TeaCard {...obj} />
-                      </li>
-                    ))}
-              </>
-            )}
-          </>
-        </div>
-        <Pagination currentPage={currentPage} onChangePage={onChangePage} />
+    <>
+      <div className="content-top">
+        <Categories value={categoryIndex} onSelectCategory={onSelectCategory} />
+        <Sort />
       </div>
-    </div>
+      <div className="content-items">
+        <>
+          {status === 'error' ? <ItemsNotFound /> : <>{status === 'loading' ? skeleton : teas}</>}
+        </>
+      </div>
+      <Pagination currentPage={currentPage} onChangePage={onChangePage} />
+    </>
   );
 };
 

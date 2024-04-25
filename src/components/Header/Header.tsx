@@ -19,7 +19,7 @@ export const Header = (): JSX.Element => {
   }, [items]);
 
   return (
-    <div className="wrapper">
+    <>
       <div className="header">
         <Link to="/" className="header-link">
           <div className="header-title">
@@ -36,6 +36,6 @@ export const Header = (): JSX.Element => {
           </button>
         )}
       </div>
-    </div>
+    </>
   );
 };

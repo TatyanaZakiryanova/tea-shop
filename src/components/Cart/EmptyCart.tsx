@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const EmptyCart = () => {
   return (
-    <div className="wrapper">
+    <>
       <div className="cart-header">
         <h2 className="cart-title">Cart</h2>
       </div>
@@ -20,7 +20,7 @@ const EmptyCart = () => {
           <button className="empty-cart-back">← Back</button>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 

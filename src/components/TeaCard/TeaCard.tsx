@@ -41,7 +41,7 @@ export const TeaCard: React.FC<TeaProps> = ({
   const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
 
   return (
-    <div className="card-wrapper">
+    <>
       <div className="card">
         <Link key={id} to={`/tea/${id}`}>
           <img className="card-image" src={imageUrl} title="Show description" />
@@ -72,6 +72,6 @@ export const TeaCard: React.FC<TeaProps> = ({
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };

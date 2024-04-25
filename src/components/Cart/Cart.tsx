@@ -13,7 +13,9 @@ const Cart = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const onClickClearCart = () => {
-    dispatch(clearCart());
+    if (window.confirm('Are you sure you want to empty the cart?')) {
+      dispatch(clearCart());
+    }
   };
 
   if (!totalCost) {
@@ -21,7 +23,7 @@ const Cart = (): JSX.Element => {
   }
 
   return (
-    <div className="wrapper">
+    <>
       <div className="cart">
         <div className="cart-header">
           <h2 className="cart-title">Cart</h2>
@@ -44,7 +46,7 @@ const Cart = (): JSX.Element => {
           </Link>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
