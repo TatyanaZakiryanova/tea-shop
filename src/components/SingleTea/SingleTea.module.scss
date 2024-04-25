@@ -18,11 +18,18 @@
         flex-direction: column;
         font-size: $size;
         padding: 50px;
+        .add {
+            align-items: center;
+            margin-top: 30px;
+            padding: 5px;
+            font-size: 25px;
+        }
         button {
             margin-top: 10px;
             max-width: 200px;
             display: flex;
             justify-content: center;
+            padding: 5px;
             &:active {
                 background-color: rgb(145, 212, 168);
                 color: white;

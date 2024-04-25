@@ -84,9 +84,8 @@ const TeaPage = () => {
             </li>
           ))}
         </ul>
-        <button onClick={onClickAddItem}>
-          <FaCartShopping className={styles.icon} />
-          Add to cart
+        <button onClick={onClickAddItem} className={styles.add}>
+          <FaCartShopping className={styles.icon} /> Add to cart
         </button>
         <div>
           <Link to="/" className={styles.back}>
