@@ -51,17 +51,17 @@ button {
 }
 
 .empty-cart {
-text-align: center;
-padding: 20px;
-margin: 0 auto;
-font-size: $size;
-background-color: $background;
-border-radius: $radius;
-&-back {
-    border: rgb(0, 0, 0) 1px dashed;
-    font-size: 2rem;
-}
-&-icon {
-    font-size: 5rem;
-}
-}
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    font-size: $size;
+    background-color: $background;
+    border-radius: $radius;
+    &-back {
+        border: rgb(0, 0, 0) 1px dashed;
+        font-size: 2rem;
+    }
+    &-icon {
+        font-size: 5rem;
+    }
+    }
