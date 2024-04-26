@@ -3,7 +3,6 @@ import { Categories } from '../components/Categories/Categories';
 import { Sort } from '../components/Sort/Sort';
 import { TeaCard } from '../components/TeaCard/TeaCard';
 import { useAppDispatch, useAppSelector } from '../redux/store';
-import { setCategoryIndex, setCurrentPage } from '../redux/filterSlice/filterSlice';
 import Skeleton from '../components/TeaCard/Skeleton';
 import Pagination from '../components/Pagination/Pagination';
 import ItemsNotFound from '../components/ItemsNotFound/ItemsNotFound';
@@ -18,14 +17,6 @@ const Main = (): JSX.Element => {
   const { items, status } = useAppSelector((state) => state.teaReducer);
 
   const dispatch = useAppDispatch();
-
-  const onSelectCategory = (index: number) => {
-    dispatch(setCategoryIndex(index));
-  };
-
-  const onChangePage = (page: number) => {
-    dispatch(setCurrentPage(page));
-  };
 
   const fetchData = async () => {
     const sortBy = sortType.sortParam;
@@ -62,7 +53,7 @@ const Main = (): JSX.Element => {
   return (
     <>
       <div className="content-top">
-        <Categories value={categoryIndex} onSelectCategory={onSelectCategory} />
+        <Categories />
         <Sort />
       </div>
       <div className="content-items">
@@ -70,7 +61,7 @@ const Main = (): JSX.Element => {
           {status === 'error' ? <ItemsNotFound /> : <>{status === 'loading' ? skeleton : teas}</>}
         </>
       </div>
-      <Pagination currentPage={currentPage} onChangePage={onChangePage} />
+      <Pagination />
     </>
   );
 };
