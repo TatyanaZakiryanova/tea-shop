@@ -2,6 +2,7 @@ import ReactPaginate from 'react-paginate';
 import styles from './Pagination.module.scss';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { setCurrentPage } from '../../redux/filterSlice/filterSlice';
+import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
 const Pagination = () => {
   const currentPage = useAppSelector((state) => state.filterReducer.currentPage);
@@ -14,11 +15,11 @@ const Pagination = () => {
     <ReactPaginate
       className={styles.pagination}
       breakLabel="..."
-      nextLabel="›"
+      nextLabel={<IoMdArrowDropright />}
       onPageChange={(event) => onClickPage(event.selected + 1)}
       pageRangeDisplayed={4}
       pageCount={2}
-      previousLabel="‹"
+      previousLabel={<IoMdArrowDropleft />}
       renderOnZeroPageCount={null}
       forcePage={currentPage - 1}
     />
