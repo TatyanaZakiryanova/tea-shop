@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.footer {
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.354);
+    text-align: center;
+    border-radius: $radius;
+    margin-top: 20px;
+    color: white;
+    padding: 5px;
+    .bottom {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+}
