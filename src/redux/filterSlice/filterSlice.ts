@@ -1,11 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { FilterSlice, SortName } from './types';
+import { FilterSlice, SortEnum, SortName } from './types';
 
 const initialState: FilterSlice = {
   categoryIndex: 0,
   sort: {
     name: 'Title',
-    sortParam: 'title',
+    sortParam: SortEnum.TITLE,
   },
   searchValue: '',
   currentPage: 1,

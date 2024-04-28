@@ -2,22 +2,22 @@ import { useState } from 'react';
 import { setSortParam } from '../../redux/filterSlice/filterSlice';
 import { PiSortAscendingLight } from 'react-icons/pi';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { SortName } from '../../redux/filterSlice/types';
+import { SortEnum, SortName } from '../../redux/filterSlice/types';
 
-const sort: Array<SortName> = [
+const sort: SortName[] = [
   {
     name: 'Title',
-    sortParam: 'title',
+    sortParam: SortEnum.TITLE,
   },
-  { name: 'Price ↓', sortParam: 'price' },
-  { name: 'Price ↑', sortParam: 'price' },
+  { name: 'Price ↓', sortParam: SortEnum.PRICE },
+  { name: 'Price ↑', sortParam: SortEnum.PRICE },
   {
-    name: 'Rating ↓ ',
-    sortParam: 'rating',
+    name: 'Rating ↓',
+    sortParam: SortEnum.RATING,
   },
   {
-    name: 'Rating ↑ ',
-    sortParam: 'rating',
+    name: 'Rating ↑',
+    sortParam: SortEnum.RATING,
   },
 ];
 

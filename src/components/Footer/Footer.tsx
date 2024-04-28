@@ -8,6 +8,7 @@ const Footer = () => {
       <IoIosLeaf />
       Tea Shop
       <br />
+      <p>online store of loose leaf tea</p>
       <div className={styles.bottom}>2024</div>
     </div>
   );

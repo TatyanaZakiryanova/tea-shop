@@ -1,6 +1,12 @@
+export enum SortEnum {
+  TITLE = 'title',
+  PRICE = 'price',
+  RATING = 'rating',
+}
+
 export type SortName = {
-  name: string;
-  sortParam: string;
+  name: 'Title' | 'Price ↓' | 'Price ↑' | 'Rating ↓' | 'Rating ↑';
+  sortParam: SortEnum;
 };
 
 export type FilterSlice = {
