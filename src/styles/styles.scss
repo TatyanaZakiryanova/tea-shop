@@ -26,6 +26,9 @@ body {
 
 .wrapper {
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 button {
@@ -43,6 +46,7 @@ button {
 }
 
 .content {
+    flex-grow: 1;
     &-top {
         display: flex;
         align-items: center;
@@ -59,10 +63,6 @@ button {
         border-radius: $radius;
         padding: 10px;
         }
-    }
-
-    .footer {
-        min-height: 100%;
     }
 
   li {
