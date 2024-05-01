@@ -16,20 +16,19 @@ const teaSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchTeas.pending, (state) => {
-      state.items = [];
-      state.status = Status.LOADING;
-    });
-
-    builder.addCase(fetchTeas.fulfilled, (state, action) => {
-      state.items = action.payload;
-      state.status = Status.SUCCESS;
-    });
-
-    builder.addCase(fetchTeas.rejected, (state) => {
-      state.items = [];
-      state.status = Status.ERROR;
-    });
+    builder
+      .addCase(fetchTeas.pending, (state) => {
+        state.items = [];
+        state.status = Status.LOADING;
+      })
+      .addCase(fetchTeas.fulfilled, (state, action) => {
+        state.items = action.payload;
+        state.status = Status.SUCCESS;
+      })
+      .addCase(fetchTeas.rejected, (state) => {
+        state.items = [];
+        state.status = Status.ERROR;
+      });
   },
 });
 

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { addItem } from '../../redux/cartSlice/cartSlice';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 import { Link } from 'react-router-dom';
 import { TeaProps } from './types';
 import { CartItem } from '../../redux/cartSlice/types';
+import { selectAddedCartItem } from '../../redux/cartSlice/selectors';
 
 export const TeaCard: React.FC<TeaProps> = ({
   id,
@@ -32,11 +33,6 @@ export const TeaCard: React.FC<TeaProps> = ({
     dispatch(addItem(item));
   };
 
-  const selectAddedCartItem = (id: string, weight: number) =>
-    useAppSelector((state) =>
-      state.cartReducer.items.find((obj) => obj.id === id && obj.weight === weight),
-    );
-
   const addedCartItem = selectAddedCartItem(id, weight[activeWeight]);
   const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
 
@@ -48,7 +44,7 @@ export const TeaCard: React.FC<TeaProps> = ({
         </Link>
         <h3 className="card-title">{title}</h3>
         <div className="card-inform">
-          <h4 className="tea-price">{price} &#8381;</h4>
+          <h4 className="tea-price">{price}</h4>
           <p>per 100 grams</p>
           <h4 className="tea-type">Type: {type} tea</h4>
           <h4 className="tea-rating">Rating: {rating}</h4>

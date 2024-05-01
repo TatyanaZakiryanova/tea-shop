@@ -19,8 +19,6 @@
 };
 
 &-back {
-    margin-top: 10px;
-    font-size: 1rem;
     margin-left: 0;
     border: rgb(0, 0, 0) 1px dashed;
 }
@@ -45,7 +43,7 @@ button {
 
 .items-cost {
     font-size: 1.8rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    font-weight: $bold;
     border: 10px;
 }
 }

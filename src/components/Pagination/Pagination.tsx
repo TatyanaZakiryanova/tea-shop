@@ -5,8 +5,9 @@ import { setCurrentPage } from '../../redux/filterSlice/filterSlice';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
 const Pagination = () => {
-  const currentPage = useAppSelector((state) => state.filterReducer.currentPage);
+  const { currentPage } = useAppSelector((state) => state.filterReducer);
   const dispatch = useAppDispatch();
+
   const onClickPage = (page: number) => {
     dispatch(setCurrentPage(page));
   };

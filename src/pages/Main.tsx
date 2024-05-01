@@ -10,7 +10,6 @@ import { fetchTeas } from '../redux/teaSlice/asyncActions';
 
 const Main = (): JSX.Element => {
   const sortType = useAppSelector((state) => state.filterReducer.sort);
-
   const { categoryIndex, searchValue, currentPage } = useAppSelector(
     (state) => state.filterReducer,
   );

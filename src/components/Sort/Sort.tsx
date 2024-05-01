@@ -23,7 +23,7 @@ const sort: SortName[] = [
 
 export const Sort = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const sortobj = useAppSelector((state) => state.filterReducer.sort);
+  const sortName = useAppSelector((state) => state.filterReducer.sort);
 
   const [activeSort, setActiveSort] = useState<boolean>(false);
 
@@ -36,7 +36,7 @@ export const Sort = (): JSX.Element => {
       <div className="sort-label">
         <PiSortAscendingLight className="sort-icon" />
         <h2>
-          Sort by: <span onClick={() => setActiveSort(!activeSort)}>{sortobj.name}</span>
+          Sort by: <span onClick={() => setActiveSort(!activeSort)}>{sortName.name}</span>
         </h2>
       </div>
       {activeSort && (
@@ -46,7 +46,7 @@ export const Sort = (): JSX.Element => {
               <li
                 key={i}
                 onClick={() => onClickSort(obj)}
-                className={sortobj.sortParam === obj.sortParam ? 'active' : ''}
+                className={sortName.sortParam === obj.sortParam ? 'active' : ''}
               >
                 {obj.name}
               </li>

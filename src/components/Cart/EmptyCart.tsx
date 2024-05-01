@@ -17,7 +17,7 @@ const EmptyCart = () => {
         <p>Return to the main page to order items:</p>
         <br />
         <Link to="/" className="back-link">
-          <button className="empty-cart-back">← Back</button>
+          <button className="empty-cart-back">Home</button>
         </Link>
       </div>
     </>

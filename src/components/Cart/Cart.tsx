@@ -37,12 +37,12 @@ const Cart = (): JSX.Element => {
           ))}
         </div>
         <div className="cart-inform">
-          <button className="items-cost">Total: {totalCost} &#8381;</button>
+          <div className="items-cost">Total: {totalCost}</div>
           <button className="order-button">Place an order</button>
         </div>
-        <div className="cart-navigation">
-          <Link to="/" className="back-link">
-            <button className="cart-back">← Back</button>
+        <div>
+          <Link to="/">
+            <button className="cart-back">Home</button>
           </Link>
         </div>
       </div>

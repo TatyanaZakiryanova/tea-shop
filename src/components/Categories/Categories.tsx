@@ -1,9 +1,9 @@
 import { setCategoryIndex } from '../../redux/filterSlice/filterSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 
-export const Categories = (): JSX.Element => {
-  const categories: string[] = ['All', 'Black', 'Green', 'Herbal'];
+const categories: string[] = ['All', 'Black', 'Green', 'Herbal'];
 
+export const Categories = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const category = useAppSelector((state) => state.filterReducer.categoryIndex);
 
