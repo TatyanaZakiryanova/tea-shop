@@ -63,7 +63,7 @@ export const TeaCard: React.FC<TeaProps> = ({
               ))}
             </ul>
           </div>
-          <button onClick={onClickAddItem} className="cart-add">
+          <button onClick={onClickAddItem} className={addedCartItem ? 'added' : 'notadded'}>
             {addedValue}
           </button>
         </div>

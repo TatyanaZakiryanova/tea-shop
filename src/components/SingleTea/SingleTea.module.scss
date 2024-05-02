@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/cartbutton.scss';
 
 .wrapper {
     margin-top: 10px;
@@ -22,11 +23,12 @@
         flex-direction: column;
         font-size: $size;
         padding: 20px;
-        .add {
-            align-items: center;
-            margin-top: 30px;
-            padding: 5px;
-            font-size: 25px;
+        .notadded {
+            @include cartbutton;
+        }
+        .added {
+            @include cartbutton;
+            background-color: $highlight;
         }
         button {
             margin-top: 10px;
@@ -36,9 +38,6 @@
             padding: 5px;
             .icon {
                 margin-right: 5px;
-            }
-            &:active {
-                color: white;
             }
         }
         .price {

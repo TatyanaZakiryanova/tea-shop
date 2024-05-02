@@ -40,10 +40,16 @@
             transform: scale(0.95);
         }
     }
-
-    .cart-add {
+    .notadded {
         width: 120px;
-          &:active {
-        color: white;
+        &:active {
+         background-color: $activebutton;
         }
     }
+    .added {
+        width: 120px;
+        background-color: $highlight;
+        &:active {
+            background-color: $activebutton;
+           }
+       }
