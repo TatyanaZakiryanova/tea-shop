@@ -1,4 +1,5 @@
 # Tea Shop
+
 TS + React + Redux Toolkit.  
 <br />
 Online store of loose leaf tea. Features: sorting items, searching for items, adding items to cart.  
@@ -9,7 +10,7 @@ Link: https://teaonlinestore.netlify.app/
 
 ## Preview
 
-<img src="./src/assets/teapreview.PNG" alt="preview" width="1550" height="400">
+<img src="./src/assets/teashopreview.PNG" alt="preview" width="1550" height="400">
 
 ## How to start project
 
