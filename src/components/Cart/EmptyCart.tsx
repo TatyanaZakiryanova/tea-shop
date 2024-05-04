@@ -1,4 +1,4 @@
-import { GiShoppingCart } from 'react-icons/gi';
+import { IoCartOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 
 const EmptyCart = () => {
@@ -9,7 +9,7 @@ const EmptyCart = () => {
       </div>
       <div className="empty-cart">
         <h1>
-          <GiShoppingCart className="empty-cart-icon" />
+          <IoCartOutline className="empty-cart-icon" />
           <br />
           Cart is empty
         </h1>
