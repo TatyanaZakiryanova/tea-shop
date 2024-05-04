@@ -10,7 +10,7 @@ Link: https://teaonlinestore.netlify.app/
 
 ## Preview
 
-<img src="./src/assets/teashopreview.PNG" alt="preview" width="1550" height="400">
+<img src="./src/assets/teashopreview.PNG" alt="preview">
 
 ## How to start project
 
