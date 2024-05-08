@@ -1,11 +1,13 @@
 import ReactPaginate from 'react-paginate';
 import styles from './Pagination.module.scss';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 import { setCurrentPage } from '../../redux/filterSlice/filterSlice';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
+import { currentPageSelector } from '../../redux/filterSlice/selectors';
+import { useSelector } from 'react-redux';
 
 const Pagination = () => {
-  const { currentPage } = useAppSelector((state) => state.filterReducer);
+  const currentPage = useSelector(currentPageSelector);
   const dispatch = useAppDispatch();
 
   const onClickPage = (page: number) => {

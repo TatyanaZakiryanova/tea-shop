@@ -1,6 +1,10 @@
-@import '../../styles/variables';
+@import '../../styles/variables.scss';
+@import '../../styles/activebutton.scss';
 
 .categories {
+    .active {
+        @include activebutton;
+    }
     button {
         margin: 8px 8px 8px 0;
         font-size: $size;

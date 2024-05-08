@@ -1,11 +1,12 @@
-@import '../../styles/variables';
+@import '../../styles/variables.scss';
+@import '../../styles/activebutton.scss';
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    &-image {
+    .image {
         height: 200px;
         width: 215px;
         transition: all 0.3s ease-in-out;
@@ -14,42 +15,40 @@
     }
     }
     h4 {
-        font-weight: $bold;
+        font-weight: bold;
     }
-    &-title {
-        font-weight: $bold;
+    .title {
+        font-weight: bold;
     }
-    &-inform {
-        .tea-price {
-            font-weight: $bold;
+    .inform {
+        .price {
+            font-weight: bold;
             font-size: $size;
         }        
         span {
             font-size: 15px;
         }
-    }
- }
-
-    button {
-        margin: 2px;
-        font-size: 1rem;
-        transition: all 0.2s ease-in-out;
-        &:hover {
-            background-color: $highlight;
-            cursor: pointer;
-            transform: scale(0.95);
+        .activebutton {
+            @include activebutton;
         }
     }
+    
+    button {
+        font-size: 1.1rem;
+        margin: 2px;
+    }
+    
     .notadded {
-        width: 120px;
+        width: 100px;
         &:active {
          background-color: $activebutton;
         }
     }
     .added {
-        width: 120px;
+        width: 100px;
         background-color: $highlight;
         &:active {
             background-color: $activebutton;
            }
        }
+ }

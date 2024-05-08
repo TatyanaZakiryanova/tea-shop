@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    padding: 5px;
+    .title {
+        font-size: $size;
+    }
+    .clear {
+      font-size: 1rem;
+    }
+  }
+
+  .item {
+    background-color: $background;
+    border-radius: $radius;
+    padding: 50px;
+  }
+
+  .inform {
+    display: flex;
+    justify-content: space-between;
+    button {
+      font-size: $size;
+      margin: 0;
+    }
+    margin-top: 15px;
+    .total{
+        font-size: 1.8rem;
+        font-weight: bold;
+        border: 10px;
+      }    
+  }
+
+  .back {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  button {
+    min-width: 30px;
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+

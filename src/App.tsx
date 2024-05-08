@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
-import Main from './pages/Main';
-import NotFound from './pages/NotFound';
 import { Suspense, lazy } from 'react';
 import { Spinner } from './components/Spinner/Spinner';
 
 import MainLayout from './layouts/MainLayout';
+import Main from './pages/Main/Main';
+import { DataNotFound } from './pages/NotFound/DataNotFound';
 
-const CartPage = lazy(() => import('./pages/CartPage'));
-const TeaPage = lazy(() => import('./pages/TeaPage'));
+const CartPage = lazy(() => import('./pages/CartPage/Cart'));
+const TeaPage = lazy(() => import('./pages/TeaPage/SingleTea'));
 
 export const App = () => {
   return (
@@ -31,7 +31,7 @@ export const App = () => {
               </Suspense>
             }
           />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<DataNotFound />} />
         </Route>
       </Routes>
     </>

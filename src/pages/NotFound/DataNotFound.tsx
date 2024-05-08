@@ -1,8 +1,9 @@
 import { MdOutlineErrorOutline } from 'react-icons/md';
+import styles from './DataNotFound.module.scss';
 
 export const DataNotFound = (): JSX.Element => {
   return (
-    <div className="error-icon">
+    <div className={styles.error}>
       <h1>
         <MdOutlineErrorOutline />
         <br />

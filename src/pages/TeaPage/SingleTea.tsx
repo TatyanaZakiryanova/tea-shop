@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Spinner } from '../Spinner/Spinner';
+import { Spinner } from '../../components/Spinner/Spinner';
 import styles from './SingleTea.module.scss';
 import { addItem } from '../../redux/cartSlice/cartSlice';
 import { useAppDispatch } from '../../redux/store';
@@ -59,7 +59,7 @@ const TeaPage = () => {
                 <li key={grams}>
                   <button
                     onClick={() => setActiveWeight(index)}
-                    className={activeWeight === index ? 'active-button' : ''}
+                    className={activeWeight === index ? styles.activebutton : ''}
                   >
                     {grams} g
                   </button>

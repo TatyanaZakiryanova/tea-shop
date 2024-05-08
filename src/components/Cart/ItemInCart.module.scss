@@ -1,9 +1,8 @@
-@import '../../styles/variables';
+@import '../../styles/variables.scss';
 
 .display {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(215px,1fr));
-    margin-bottom: 30px;
     .main  {
         text-align: center;
         .img {
@@ -15,7 +14,7 @@
         }
        }
        .title {
-        font-weight: $bold;
+        font-weight: bold;
         font-size: $size;
        }
     }
@@ -25,14 +24,17 @@
         align-self: center;
         justify-self: center;
         .price {
-            font-weight: $bold;
+            font-weight: bold;
         }
     }
     .amount {
         align-self: center;
         font-size: $size;
-        font-weight: $bold;
+        font-weight: bold;
         justify-self: center;
+        .amountbutton {
+            margin-right: 2px;
+        }
     }
     .delete {
         align-self: center;

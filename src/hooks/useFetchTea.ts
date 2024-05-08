@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { SingleTea } from '../components/SingleTea/types';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { SingleTea } from '../pages/TeaPage/types';
 
 const useFetchTea = (id: string | undefined) => {
   const [tea, setTea] = useState<SingleTea | null>(null);

@@ -29,7 +29,7 @@ const ItemInCart: React.FC<CartItem> = ({
 
   return (
     <>
-      <div className={styles.card}>
+      <div>
         <div className={styles.display}>
           <div className={styles.main}>
             <img className={styles.img} src={imageUrl} />
@@ -37,12 +37,15 @@ const ItemInCart: React.FC<CartItem> = ({
           </div>
           <div className={styles.inform}>
             <h4 className={styles.price}>{price}</h4>
-            <h4 className={styles.type}>Type: {type} tea</h4>
-            <h4 className={styles.rating}>Rating: {rating}</h4>
-            <h4 className={styles.weight}>Weight: {weight} g</h4>
+            <h4>Type: {type} tea</h4>
+            <h4>Rating: {rating}</h4>
+            <h4>Weight: {weight} g</h4>
           </div>
           <h4 className={styles.amount}>
-            Number: {count} <button onClick={onClickPlusAmount}>+</button>
+            Number: {count}{' '}
+            <button onClick={onClickPlusAmount} className={styles.amountbutton}>
+              +
+            </button>
             <button disabled={count === 1} onClick={onClickMinusAmount}>
               -
             </button>

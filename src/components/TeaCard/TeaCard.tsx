@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { TeaProps } from './types';
 import { CartItem } from '../../redux/cartSlice/types';
 import { selectAddedCartItem } from '../../redux/cartSlice/selectors';
+import styles from './TeaCard.module.scss';
 
 export const TeaCard: React.FC<TeaProps> = ({
   id,
@@ -38,24 +39,24 @@ export const TeaCard: React.FC<TeaProps> = ({
 
   return (
     <>
-      <div className="card">
+      <div className={styles.card}>
         <Link key={id} to={`/tea/${id}`}>
-          <img className="card-image" src={imageUrl} title="Show description" />
+          <img className={styles.image} src={imageUrl} title="Show description" />
         </Link>
-        <h3 className="card-title">{title}</h3>
-        <div className="card-inform">
-          <h4 className="tea-price">{price}</h4>
+        <h3 className={styles.title}>{title}</h3>
+        <div className={styles.inform}>
+          <h4 className={styles.price}>{price}</h4>
           <p>per 100 grams</p>
-          <h4 className="tea-type">Type: {type} tea</h4>
-          <h4 className="tea-rating">Rating: {rating}</h4>
-          <div className="weight-selector">
-            <h4 className="tea-weight">Weight:</h4>
+          <h4>Type: {type} tea</h4>
+          <h4>Rating: {rating}</h4>
+          <div>
+            <h4>Weight:</h4>
             <ul>
               {weight.map((grams, index) => (
                 <li key={grams}>
                   <button
                     onClick={() => setActiveWeight(index)}
-                    className={activeWeight === index ? 'active-button' : ''}
+                    className={activeWeight === index ? styles.activebutton : ''}
                   >
                     {grams} g
                   </button>
@@ -63,7 +64,10 @@ export const TeaCard: React.FC<TeaProps> = ({
               ))}
             </ul>
           </div>
-          <button onClick={onClickAddItem} className={addedCartItem ? 'added' : 'notadded'}>
+          <button
+            onClick={onClickAddItem}
+            className={addedCartItem ? styles.added : styles.notadded}
+          >
             {addedValue}
           </button>
         </div>

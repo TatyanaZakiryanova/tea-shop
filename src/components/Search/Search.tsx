@@ -3,6 +3,7 @@ import { useAppDispatch } from '../../redux/store';
 import { setSearchValue } from '../../redux/filterSlice/filterSlice';
 import { ChangeEvent, useCallback, useState } from 'react';
 import debounce from 'lodash.debounce';
+import styles from './Search.module.scss';
 
 export const Search = () => {
   const [searchText, setSearchText] = useState<string>('');
@@ -20,8 +21,8 @@ export const Search = () => {
   };
 
   return (
-    <div className="search-input">
-      <LiaSearchSolid className="search-icon" />
+    <div className={styles.search}>
+      <LiaSearchSolid className={styles.icon} />
       <input value={searchText} onChange={onChangeInput} placeholder="Search..." />
     </div>
   );

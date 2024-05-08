@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    ul {
+        display: flex;
+    }
+    .items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(215px,1fr));
+        background-color: $background;
+        justify-items: center;
+        border-radius: $radius;
+        padding: 10px;
+    }

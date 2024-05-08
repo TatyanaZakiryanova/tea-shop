@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.title {
+    font-size: $size;
+    padding: 5px;
+}
+
+.empty {
+    text-align: center;
+    padding: 30px;
+    margin: 0 auto;
+    font-size: $size;
+    background-color: $background;
+    border-radius: $radius;
+    .back {
+      font-size: 2rem;
+    }
+    .icon {
+      font-size: 5rem;
+    }
+}
+  

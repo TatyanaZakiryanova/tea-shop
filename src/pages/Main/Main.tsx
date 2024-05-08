@@ -1,19 +1,29 @@
 import { useEffect } from 'react';
-import { Categories } from '../components/Categories/Categories';
-import { Sort } from '../components/Sort/Sort';
-import { TeaCard } from '../components/TeaCard/TeaCard';
-import { useAppDispatch, useAppSelector } from '../redux/store';
-import Skeleton from '../components/TeaCard/Skeleton';
-import Pagination from '../components/Pagination/Pagination';
-import ItemsNotFound from '../components/ItemsNotFound/ItemsNotFound';
-import { fetchTeas } from '../redux/teaSlice/asyncActions';
+import styles from './Main.module.scss';
+import { Categories } from '../../components/Categories/Categories';
+import ItemsNotFound from '../../components/ItemsNotFound/ItemsNotFound';
+import Pagination from '../../components/Pagination/Pagination';
+import { Sort } from '../../components/Sort/Sort';
+import Skeleton from '../../components/TeaCard/Skeleton';
+import { TeaCard } from '../../components/TeaCard/TeaCard';
+import { useAppDispatch } from '../../redux/store';
+import { fetchTeas } from '../../redux/teaSlice/asyncActions';
+import { useSelector } from 'react-redux';
+import {
+  categorySelector,
+  currentPageSelector,
+  searchValueSelector,
+  sortSelector,
+} from '../../redux/filterSlice/selectors';
+import { itemsSelector, statusSelector } from '../../redux/teaSlice/selectors';
 
 const Main = (): JSX.Element => {
-  const sortType = useAppSelector((state) => state.filterReducer.sort);
-  const { categoryIndex, searchValue, currentPage } = useAppSelector(
-    (state) => state.filterReducer,
-  );
-  const { items, status } = useAppSelector((state) => state.teaReducer);
+  const sortType = useSelector(sortSelector);
+  const categoryIndex = useSelector(categorySelector);
+  const searchValue = useSelector(searchValueSelector);
+  const currentPage = useSelector(currentPageSelector);
+  const items = useSelector(itemsSelector);
+  const status = useSelector(statusSelector);
 
   const dispatch = useAppDispatch();
 
@@ -51,11 +61,11 @@ const Main = (): JSX.Element => {
 
   return (
     <>
-      <div className="content-top">
+      <div className={styles.top}>
         <Categories />
         <Sort />
       </div>
-      <div className="content-items">
+      <div className={styles.items}>
         <>
           {status === 'error' ? <ItemsNotFound /> : <>{status === 'loading' ? skeleton : teas}</>}
         </>

@@ -1,9 +1,10 @@
 @import '../../styles/variables';
+@import '../../styles/activebutton.scss';
 
 .sort {
     position: relative;
     font-size: 1rem;
-    &-label {
+    .label {
         display: flex;
         @media screen and (max-width: 414px) {
             font-size: 0.9rem;
@@ -17,7 +18,7 @@
         @media screen and (max-width: 360px){
             font-size: 0.7rem;
         }
-        .sort-icon {
+        .icon {
             font-size: 29px;
             @media screen and (max-width: 360px){
                 font-size: 1.2rem;
@@ -25,10 +26,10 @@
         }
         span {
             cursor: pointer;
-            font-weight: $bold;
+            font-weight: bold;
         }
     }
-    &-popup {
+    .popup {
         position: absolute;
         right: 0;
         padding: 10px 0;
@@ -43,6 +44,9 @@
                 font-size: $size;
                 border-radius: $radius;
                 transition: all 0.15s ease-in-out;
+                &:active {
+                    @include activebutton;
+                }
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.5);
                     transform: scale(0.95);

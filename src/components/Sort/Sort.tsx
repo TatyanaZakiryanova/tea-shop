@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { setSortParam } from '../../redux/filterSlice/filterSlice';
 import { PiSortAscendingLight } from 'react-icons/pi';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 import { SortEnum, SortName } from '../../redux/filterSlice/types';
+import styles from './Sort.module.scss';
+import { useSelector } from 'react-redux';
+import { sortSelector } from '../../redux/filterSlice/selectors';
 
 const sort: SortName[] = [
   {
@@ -23,7 +26,7 @@ const sort: SortName[] = [
 
 export const Sort = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const sortName = useAppSelector((state) => state.filterReducer.sort);
+  const sortName = useSelector(sortSelector);
 
   const [activeSort, setActiveSort] = useState<boolean>(false);
 
@@ -32,21 +35,21 @@ export const Sort = (): JSX.Element => {
   };
 
   return (
-    <div className="sort">
-      <div className="sort-label">
-        <PiSortAscendingLight className="sort-icon" />
+    <div className={styles.sort}>
+      <div className={styles.label}>
+        <PiSortAscendingLight className={styles.icon} />
         <h2>
           Sort by: <span onClick={() => setActiveSort(!activeSort)}>{sortName.name}</span>
         </h2>
       </div>
       {activeSort && (
-        <div className="sort-popup">
+        <div className={styles.popup}>
           <ul>
             {sort.map((obj, i) => (
               <li
                 key={i}
                 onClick={() => onClickSort(obj)}
-                className={sortName.sortParam === obj.sortParam ? 'active' : ''}
+                className={sortName.sortParam === obj.sortParam ? styles.active : ''}
               >
                 {obj.name}
               </li>

@@ -4,24 +4,24 @@
     display: flex;
     flex-direction: column-reverse;
     font-size: 2rem;
-    background-image: url('../assets/header.jpg');
+    background-image: url('../../assets/header.jpg');
     background-size: cover;
     border-radius: $radius;
-        .cart-button {
+        .link {
+            text-decoration: none;
+            color:  white;
+            max-width: 550px;
+        }
+        .cartbutton {
             align-self: flex-end;
             min-width: 50px;
             font-size: $size;
-            .cart-link {
+            .cartlink {
             text-decoration: none;
             color:  black;
            }
-           .cart-icon {
+           .carticon {
             color:   black;
            }
         }
-    &-link {
-        text-decoration: none;
-        color:  white;
-        max-width: 550px;
-    }
 }
