@@ -16,9 +16,7 @@ const Cart = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const onClickClearCart = () => {
-    if (window.confirm('Are you sure you want to empty the cart?')) {
-      dispatch(clearCart());
-    }
+    dispatch(clearCart());
   };
 
   if (!totalCost) {
@@ -43,7 +41,7 @@ const Cart = (): JSX.Element => {
         <button>Place an order</button>
       </div>
       <div>
-        <Link to="/">
+        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <button className={styles.back}>Home</button>
         </Link>
       </div>

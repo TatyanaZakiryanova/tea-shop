@@ -12,6 +12,7 @@ const Pagination = () => {
 
   const onClickPage = (page: number) => {
     dispatch(setCurrentPage(page));
+    window.scrollTo(0, 0);
   };
 
   return (

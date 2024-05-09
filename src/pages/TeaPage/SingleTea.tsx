@@ -73,7 +73,7 @@ const TeaPage = () => {
               <FaCartShopping /> {addedValue}
             </button>
             <div>
-              <Link to="/" className={styles.back}>
+              <Link to="/" className={styles.back} onClick={() => window.scrollTo(0, 0)}>
                 <button className={styles.backbutton}>Back</button>
               </Link>
             </div>

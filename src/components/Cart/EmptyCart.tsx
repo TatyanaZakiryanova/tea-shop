@@ -17,7 +17,7 @@ const EmptyCart = () => {
         <br />
         <p>Return to the main page to order items:</p>
         <br />
-        <Link to="/">
+        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <button className={styles.back}>Home</button>
         </Link>
       </div>
