@@ -11,8 +11,8 @@
     align-items: center;
     flex-flow: row wrap;
     .img {
-        width: 440px;
-        height: 400px;
+        width: 450px;
+        height: 450px;
         border-radius: $radius;
         @media screen and (max-width: 430px) {
             width: 320px;
