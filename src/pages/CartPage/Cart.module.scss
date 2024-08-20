@@ -29,12 +29,13 @@
     margin-top: 15px;
     .total{
         font-size: 1.8rem;
-        font-weight: bold;
         border: 10px;
       }    
   }
 
   .back {
+    display: flex;
+    align-items: center;
     margin-left: 0;
     margin-top: 10px;
   }

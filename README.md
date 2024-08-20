@@ -11,6 +11,7 @@ Link: https://teaonlinestore.netlify.app/
 - React
 - Redux Toolkit (включая createAsyncThunk для асинхронных запросов)
 - SCSS (Sass)
+- React Router
 - Custom React Hooks
 - Custom API
 

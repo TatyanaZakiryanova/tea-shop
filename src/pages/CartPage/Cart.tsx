@@ -8,6 +8,7 @@ import { CartItem } from '../../redux/cartSlice/types';
 import styles from './Cart.module.scss';
 import { useSelector } from 'react-redux';
 import { cartItemsSelector, totalCostSelector } from '../../redux/cartSlice/selectors';
+import { MdOutlineKeyboardDoubleArrowLeft } from 'react-icons/md';
 
 const Cart = (): JSX.Element => {
   const items = useSelector(cartItemsSelector);
@@ -42,7 +43,10 @@ const Cart = (): JSX.Element => {
       </div>
       <div>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-          <button className={styles.back}>Home</button>
+          <button className={styles.back}>
+            <MdOutlineKeyboardDoubleArrowLeft />
+            Home
+          </button>
         </Link>
       </div>
     </>

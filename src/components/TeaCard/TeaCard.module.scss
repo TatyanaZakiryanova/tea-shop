@@ -14,18 +14,14 @@
             transform: scale(0.9);
     }
     }
-    h4 {
-        font-weight: bold;
-    }
     .title {
-        font-weight: bold;
+        font-size: 28px;
     }
     .inform {
         .price {
-            font-weight: bold;
-            font-size: $size;
+            font-size: 25px;
         }        
-        span {
+        p {
             font-size: 15px;
         }
         .activebutton {

@@ -14,7 +14,6 @@
         }
        }
        .title {
-        font-weight: bold;
         font-size: $size;
        }
     }
@@ -29,15 +28,18 @@
     }
     .amount {
         align-self: center;
-        font-size: $size;
-        font-weight: bold;
+        font-size: 20px;
         justify-self: center;
         .amountbutton {
             margin-right: 2px;
         }
     }
-    .delete {
+    .remove {
+        font-size: 20px;
         align-self: center;
         justify-self: center;
+        display: flex;
+        justify-content: center;
+        width: 40px;
     }
 }

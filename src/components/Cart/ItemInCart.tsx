@@ -1,3 +1,4 @@
+import { RiDeleteBinLine } from 'react-icons/ri';
 import { addItem, minusAmount, removeItem } from '../../redux/cartSlice/cartSlice';
 import { CartItem } from '../../redux/cartSlice/types';
 import { useAppDispatch } from '../../redux/store';
@@ -50,8 +51,8 @@ const ItemInCart: React.FC<CartItem> = ({
               -
             </button>
           </h4>
-          <button className={styles.delete} onClick={onClickRemoveItem}>
-            Delete item
+          <button className={styles.remove} onClick={onClickRemoveItem}>
+            <RiDeleteBinLine />
           </button>
         </div>
       </div>

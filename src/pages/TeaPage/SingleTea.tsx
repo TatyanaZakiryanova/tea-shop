@@ -9,6 +9,7 @@ import { CartItem } from '../../redux/cartSlice/types';
 import { IoIosLeaf } from 'react-icons/io';
 import { selectAddedCartItem } from '../../redux/cartSlice/selectors';
 import useFetchTea from '../../hooks/useFetchTea';
+import { MdOutlineKeyboardDoubleArrowLeft } from 'react-icons/md';
 
 const TeaPage = () => {
   const [activeWeight, setActiveWeight] = useState<number>(0);
@@ -73,8 +74,11 @@ const TeaPage = () => {
               <FaCartShopping /> {addedValue}
             </button>
             <div>
-              <Link to="/" className={styles.back} onClick={() => window.scrollTo(0, 0)}>
-                <button className={styles.backbutton}>Back</button>
+              <Link to="/" className={styles.back}>
+                <button className={styles.backbutton}>
+                  <MdOutlineKeyboardDoubleArrowLeft />
+                  Back
+                </button>
               </Link>
             </div>
           </div>
