@@ -10,9 +10,6 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {
-      if (action.payload.weight === 200) {
-        action.payload.price *= 2;
-      }
       const findItem = state.items.find(
         (item) => item.id === action.payload.id && item.weight === action.payload.weight,
       );

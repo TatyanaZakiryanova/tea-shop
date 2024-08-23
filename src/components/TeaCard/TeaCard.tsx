@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import { addItem } from '../../redux/cartSlice/cartSlice';
-import { useAppDispatch } from '../../redux/store';
 import { Link } from 'react-router-dom';
-import { TeaProps } from './types';
-import { CartItem } from '../../redux/cartSlice/types';
 import { selectAddedCartItem } from '../../redux/cartSlice/selectors';
 import styles from './TeaCard.module.scss';
+import { SingleTea } from '../../pages/TeaPage/types';
+import useAddToCart from '../../hooks/useAddToCart';
 
-export const TeaCard: React.FC<TeaProps> = ({
+export const TeaCard: React.FC<SingleTea> = ({
   id,
   imageUrl,
   title,
@@ -15,24 +13,12 @@ export const TeaCard: React.FC<TeaProps> = ({
   weight,
   price,
   rating,
+  description,
 }) => {
   const [activeWeight, setActiveWeight] = useState<number>(0);
 
-  const dispatch = useAppDispatch();
-
-  const onClickAddItem = () => {
-    const item: CartItem = {
-      id,
-      imageUrl,
-      title,
-      type,
-      weight: weight[activeWeight],
-      price,
-      rating,
-      count: 0,
-    };
-    dispatch(addItem(item));
-  };
+  const tea = { id, imageUrl, title, type, weight, price, rating, description };
+  const { onClickAddItem } = useAddToCart(tea, activeWeight);
 
   const addedCartItem = selectAddedCartItem(id, weight[activeWeight]);
   const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;

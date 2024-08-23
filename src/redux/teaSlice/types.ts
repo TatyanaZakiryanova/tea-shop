@@ -7,6 +7,7 @@ export type Tea = {
   weight: number[];
   price: number;
   category: number;
+  description: string;
 };
 
 export enum Status {
