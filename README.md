@@ -17,7 +17,7 @@ Link: https://teaonlinestore.netlify.app/
 
 ## Preview
 
-<img src="./src/assets/teashoppreview.png" alt="preview">
+<img src="./src/assets/teashoppreview.PNG" alt="preview">
 
 ## Features
 
