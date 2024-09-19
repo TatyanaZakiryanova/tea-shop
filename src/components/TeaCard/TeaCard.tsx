@@ -32,7 +32,6 @@ export const TeaCard: React.FC<SingleTea> = ({
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.inform}>
           <h4 className={styles.price}>{price}</h4>
-          <p>per 100 grams</p>
           <h4>Type: {type} tea</h4>
           <h4>Rating: {rating}</h4>
           <div>

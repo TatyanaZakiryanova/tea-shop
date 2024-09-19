@@ -2,12 +2,13 @@
 @import '../../styles/activebutton.scss';
 
 .categories {
+    margin: 0 0 0 5px;
     .active {
         @include activebutton;
     }
     button {
-        margin: 8px 8px 8px 0;
-        font-size: $size;
+        font-size: 1.2rem;
+        margin: 5px 5px 5px 0;
         @media screen and (max-width: 430px) {
             font-size: 1rem;
         }

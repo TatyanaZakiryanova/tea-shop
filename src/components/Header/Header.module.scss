@@ -6,11 +6,13 @@
     font-size: 2rem;
     background-image: url('../../assets/header.jpg');
     background-size: cover;
-    border-radius: $radius;
         .link {
             text-decoration: none;
             color:  white;
             max-width: 550px;
+            .title {
+                margin: 20px;
+            }
         }
         .cartbutton {
             align-self: flex-end;

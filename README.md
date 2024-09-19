@@ -17,7 +17,7 @@ Link: https://teaonlinestore.netlify.app/
 
 ## Preview
 
-<img src="./src/assets/teashoppreview.PNG" alt="preview">
+<img src="./src/assets/teashoppreview.png" alt="preview">
 
 ## Features
 
@@ -36,6 +36,7 @@ Link: https://teaonlinestore.netlify.app/
 - Подсчёт стоимости товаров, добавленных в корзину
 - Удаление товаров из корзины
 - Кастомный хук для получения данных о конкретном чае с помощью его id
+- Кастомный хук для добавления чая в корзину
 - Для целей демонстрации создан статический JSON-файл, предоставляющий данные о товарах
 
 ## How to start project
