@@ -53,11 +53,16 @@ const Main = (): JSX.Element => {
   }, [categoryIndex, sortType, searchValue, currentPage]);
 
   const skeleton = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
-  const teas = items.map((obj) => (
-    <li key={obj.id}>
-      <TeaCard {...obj} />
-    </li>
-  ));
+  const teas =
+    items.length > 0 ? (
+      items.map((obj) => (
+        <li key={obj.id}>
+          <TeaCard {...obj} />
+        </li>
+      ))
+    ) : (
+      <ItemsNotFound />
+    );
 
   return (
     <>

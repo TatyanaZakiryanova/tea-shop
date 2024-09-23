@@ -17,6 +17,7 @@ const filterSlice = createSlice({
   reducers: {
     setCategoryIndex: (state, action: PayloadAction<number>) => {
       state.categoryIndex = action.payload;
+      state.currentPage = 1;
     },
     setSortParam: (state, action: PayloadAction<SortName>) => {
       state.sort = action.payload;

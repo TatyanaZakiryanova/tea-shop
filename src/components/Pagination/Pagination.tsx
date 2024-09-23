@@ -26,6 +26,8 @@ const Pagination = () => {
       previousLabel={<IoMdArrowDropleft />}
       renderOnZeroPageCount={null}
       forcePage={currentPage - 1}
+      previousClassName={currentPage === 1 ? 'disabled' : ''}
+      nextClassName={currentPage === 2 ? 'disabled' : ''}
     />
   );
 };

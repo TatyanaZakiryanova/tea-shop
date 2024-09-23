@@ -7,7 +7,7 @@ const ItemsNotFound = () => {
       <div className={styles.error}>
         <PiWarningCircleLight className={styles.erroricon} />
         <br />
-        <p>No items found. Please try again later.</p>
+        <p>No items found.</p>
       </div>
     </div>
   );
