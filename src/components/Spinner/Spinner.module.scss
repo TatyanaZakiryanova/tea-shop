@@ -7,13 +7,14 @@
         align-items: center;
         text-align: center;
         margin-top: 20px;
+        font-size: 1.5rem;
         padding: 150px;
-        font-size: 2rem;
         background-color: $background;
         border-radius: $radius;
         .icon {
-          font-size: 5rem;
+          font-size: 3rem;
           animation: spin 2s linear infinite;
+          color: rgb(31, 77, 64);
       }
     }
 

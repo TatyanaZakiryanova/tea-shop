@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner/Spinner';
 import styles from './SingleTea.module.scss';
 import { FaCartShopping } from 'react-icons/fa6';
-import { IoIosLeaf } from 'react-icons/io';
 import { selectAddedCartItem } from '../../redux/cartSlice/selectors';
 import useFetchTea from '../../hooks/useFetchTea';
 import { MdOutlineKeyboardDoubleArrowLeft } from 'react-icons/md';
@@ -31,10 +30,7 @@ const TeaPage = () => {
             </h4>
             <p>The price of tea will be calculated depending on the selected weight.</p>
             <h4 className={styles.type}>Type: {tea.type} tea</h4>
-            <p className={styles.description}>
-              <IoIosLeaf />
-              {tea.description}
-            </p>
+            <p className={styles.description}>{tea.description}</p>
             <ul className={styles.weight}>
               Weight:
               {tea.weight.map((grams, index) => (

@@ -4,11 +4,8 @@ import styles from './DataNotFound.module.scss';
 export const DataNotFound = (): JSX.Element => {
   return (
     <div className={styles.error}>
-      <h1>
-        <MdOutlineErrorOutline />
-        <br />
-        Data not found
-      </h1>
+      <MdOutlineErrorOutline />
+      <h3>Data not found</h3>
     </div>
   );
 };
