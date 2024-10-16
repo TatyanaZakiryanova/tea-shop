@@ -5,6 +5,7 @@ import { SortEnum, SortName } from '../../redux/filterSlice/types';
 import styles from './Sort.module.scss';
 import { useSelector } from 'react-redux';
 import { sortSelector } from '../../redux/filterSlice/selectors';
+import { IoMdArrowDropdown } from 'react-icons/io';
 
 const sort: SortName[] = [
   {
@@ -36,6 +37,7 @@ export const Sort = (): JSX.Element => {
   return (
     <div className={styles.sort}>
       <div className={styles.label}>
+        <IoMdArrowDropdown size={20} />
         <h2>
           Sort by: <span onClick={() => setActiveSort(!activeSort)}>{sortName.name}</span>
         </h2>
@@ -43,9 +45,9 @@ export const Sort = (): JSX.Element => {
       {activeSort && (
         <div className={styles.popup}>
           <ul>
-            {sort.map((obj, i) => (
+            {sort.map((obj, index) => (
               <li
-                key={i}
+                key={index}
                 onClick={() => onClickSort(obj)}
                 className={sortName.sortParam === obj.sortParam ? styles.active : ''}
               >

@@ -3,12 +3,12 @@ import styles from './Footer.module.scss';
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <IoIosLeaf />
-      Tea Shop
+      <h1>Tea Shop</h1>
       <p>online store of loose leaf tea</p>
       <div className={styles.bottom}>2024</div>
-    </div>
+    </footer>
   );
 };
 

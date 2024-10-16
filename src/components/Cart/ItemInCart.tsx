@@ -30,35 +30,33 @@ const ItemInCart: React.FC<CartItem> = ({
 
   return (
     <>
-      <div>
-        <div className={styles.display}>
-          <div className={styles.main}>
-            <img className={styles.img} src={imageUrl} />
-            <h3 className={styles.title}>{title}</h3>
-          </div>
-          <div className={styles.inform}>
-            <h4 className={styles.price}>{price}</h4>
-            <h4>Type: {type} tea</h4>
-            <h4>Rating: {rating}</h4>
-            <h4>Weight: {weight} g</h4>
-          </div>
-          <h4 className={styles.amount}>
-            Number: {count}{' '}
-            <button onClick={onClickPlusAmount} className={styles.amountbutton}>
-              +
-            </button>
-            <button
-              disabled={count === 1}
-              onClick={onClickMinusAmount}
-              className={styles.amountbutton}
-            >
-              -
-            </button>
-          </h4>
-          <button className={styles.remove} onClick={onClickRemoveItem}>
-            <RiDeleteBinLine />
-          </button>
+      <div className={styles.display}>
+        <div className={styles.main}>
+          <img className={styles.img} src={imageUrl} />
+          <h3 className={styles.title}>{title}</h3>
         </div>
+        <div className={styles.inform}>
+          <h4 className={styles.price}>{price}</h4>
+          <h4>Type: {type} tea</h4>
+          <h4>Rating: {rating}</h4>
+          <h4>Weight: {weight} g</h4>
+        </div>
+        <h4 className={styles.amount}>
+          Number: {count}
+          <button onClick={onClickPlusAmount} className={styles.amountbutton}>
+            +
+          </button>
+          <button
+            disabled={count === 1}
+            onClick={onClickMinusAmount}
+            className={styles.amountbutton}
+          >
+            -
+          </button>
+        </h4>
+        <button className={styles.remove} onClick={onClickRemoveItem}>
+          <RiDeleteBinLine />
+        </button>
       </div>
     </>
   );

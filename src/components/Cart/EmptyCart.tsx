@@ -9,7 +9,7 @@ const EmptyCart = () => {
         <h2 className={styles.title}>Cart</h2>
       </div>
       <div className={styles.empty}>
-        <IoCartOutline className={styles.icon} />
+        <IoCartOutline className={styles.icon} size={60} />
         <h2>Cart is empty</h2>
         <p>Return to the main page to order items:</p>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>

@@ -1,20 +1,15 @@
 @import '../../styles/variables';
-@import '../../styles/activebutton.scss';
+@import '../../styles/components/activebutton.scss';
 
 .sort {
     position: relative;
-    font-size: 1rem;
     .label {
         display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 0.9rem;
         margin: 0 10px 0 0;
-        @media screen and (max-width: 414px) {
-            font-size: 0.9rem;
-        }
         @media screen and (max-width: 390px) {
-            font-size: 0.8rem;
-        }
-        @media screen and (max-width: 376px) {
             font-size: 0.8rem;
         }
         @media screen and (max-width: 360px){
@@ -33,6 +28,7 @@
     .popup {
         position: absolute;
         right: 0;
+        top: 35px;
         padding: 10px 0;
         ul {
             display: flex;

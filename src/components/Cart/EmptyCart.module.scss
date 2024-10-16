@@ -10,12 +10,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 30px;
     padding: 30px;
     margin: 0 auto;
-    font-size: $size;
-    background-color: $background;
-    border-radius: $radius;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 15px;
     .icon {
       color: rgb(31, 77, 64);
     }

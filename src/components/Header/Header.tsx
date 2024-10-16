@@ -21,22 +21,20 @@ export const Header = (): JSX.Element => {
   }, [items]);
 
   return (
-    <>
-      <div className={styles.header}>
-        <Link to="/" className={styles.link}>
-          <div className={styles.title}>
-            <h1>TEA SHOP</h1>
-          </div>
-        </Link>
-        {location.pathname !== '/cart' && <Search />}
-        {location.pathname !== '/cart' && (
-          <button className={styles.cartbutton}>
-            <Link to="cart" className={styles.cartlink}>
-              <FaCartShopping className={styles.carticon} /> {totalCount}
-            </Link>
-          </button>
-        )}
-      </div>
-    </>
+    <header className={styles.header}>
+      <Link to="/" className={styles.link}>
+        <div className={styles.title}>
+          <h1>Tea Shop</h1>
+        </div>
+      </Link>
+      {location.pathname !== '/cart' && <Search />}
+      {location.pathname !== '/cart' && (
+        <button className={styles.cartbutton}>
+          <Link to="cart" className={styles.cartlink}>
+            <FaCartShopping className={styles.carticon} /> {totalCount}
+          </Link>
+        </button>
+      )}
+    </header>
   );
 };

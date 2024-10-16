@@ -24,39 +24,34 @@ export const TeaCard: React.FC<SingleTea> = ({
   const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
 
   return (
-    <>
-      <div className={styles.card}>
-        <Link key={id} to={`/tea/${id}`}>
-          <img className={styles.image} src={imageUrl} title="Show description" />
-        </Link>
-        <h3 className={styles.title}>{title}</h3>
-        <div className={styles.inform}>
-          <h4 className={styles.price}>{price}</h4>
-          <h4>Type: {type} tea</h4>
-          <h4>Rating: {rating}</h4>
-          <div className={styles.weight}>
-            <h4>Weight:</h4>
-            <ul>
-              {weight.map((grams, index) => (
-                <li key={grams}>
-                  <button
-                    onClick={() => setActiveWeight(index)}
-                    className={activeWeight === index ? styles.activebutton : styles.weightbutton}
-                  >
-                    {grams} g
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <button
-            onClick={onClickAddItem}
-            className={addedCartItem ? styles.added : styles.notadded}
-          >
-            {addedValue}
-          </button>
+    <div className={styles.card}>
+      <Link key={id} to={`/tea/${id}`}>
+        <img className={styles.image} src={imageUrl} title="Show description" />
+      </Link>
+      <h3 className={styles.title}>{title}</h3>
+      <div className={styles.inform}>
+        <h4 className={styles.price}>{price}</h4>
+        <h4>Type: {type} tea</h4>
+        <h4>Rating: {rating}</h4>
+        <div className={styles.weight}>
+          <h4>Weight:</h4>
+          <ul>
+            {weight.map((grams, index) => (
+              <li key={grams}>
+                <button
+                  onClick={() => setActiveWeight(index)}
+                  className={activeWeight === index ? styles.activebutton : styles.weightbutton}
+                >
+                  {grams} g
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
+        <button onClick={onClickAddItem} className={addedCartItem ? styles.added : styles.notadded}>
+          {addedValue}
+        </button>
       </div>
-    </>
+    </div>
   );
 };
