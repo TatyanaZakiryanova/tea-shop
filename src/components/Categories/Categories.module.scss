@@ -8,11 +8,17 @@
     }
     button {
         margin: 8px 8px 8px 0;
-        @media screen and (max-width: 390px) {
-            font-size: 0.9rem;
+        @media screen and (max-width: 430px) {
+            margin: 6px 6px 6px 0;
+            font-size: 16px;
         }
-        @media screen and (max-width: 376px) {
-            font-size: 0.8rem;
+        @media screen and (max-width: 414px) {
+            margin: 5px 5px 5px 0;
+            font-size: 14px;
+        }
+        @media screen and (max-width: 360px) {
+            margin: 4px 4px 4px 0;
+            font-size: 14px;
         }
         &:hover {
             cursor: pointer;

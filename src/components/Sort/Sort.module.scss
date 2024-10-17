@@ -9,11 +9,14 @@
         align-items: center;
         font-size: 0.9rem;
         margin: 0 10px 0 0;
-        @media screen and (max-width: 390px) {
+        @media screen and (max-width: 412px) {
             font-size: 0.8rem;
         }
+        @media screen and (max-width: 390px) {
+            font-size: 12px;
+        }
         @media screen and (max-width: 360px){
-            font-size: 0.7rem;
+            font-size: 10px;
         }
         .icon {
             font-size: 29px;
