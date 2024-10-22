@@ -22,19 +22,11 @@
     flex-direction: column;
     font-size: $size;
     padding: 20px;
-    button {
-      margin-top: 10px;
-      margin-right: 5px;
-      max-width: 200px;
-      display: flex;
-      justify-content: center;
-      padding: 5px;
-      .icon {
-        margin-right: 5px;
-      }
-    }
     .price {
       font-weight: bold;
+    }
+    .note {
+      font-size: 0.8rem;
     }
     .type {
       margin-top: 10px;
@@ -46,19 +38,16 @@
     .weight {
       display: flex;
       align-items: center;
-      button {
-        font-size: 15px;
-        padding: 8px;
+      .weightButton {
+        padding: 6px;
         margin: 2px;
       }
-    }
-    p {
-      font-size: 0.8rem;
     }
     .addButton {
       padding: 8px;
       font-size: 20px;
       min-width: 500px;
+      margin-top: 20px;
       @media screen and (max-width: 430px) {
         min-width: 200px;
       }
@@ -67,12 +56,10 @@
       margin-top: 80px;
       display: flex;
       align-items: center;
-    }
-    .back {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      margin: 10px 0 0 10px;
+      justify-content: center;
+      .backLink {
+        color: black;
+      }
     }
   }
 }

@@ -34,14 +34,20 @@ const TeaPage = () => {
               {tea.price}
               <span> per 100 grams</span>
             </h4>
-            <p>The price of tea will be calculated depending on the selected weight.</p>
+            <p className={styles.note}>
+              The price of tea will be calculated depending on the selected weight.
+            </p>
             <h4 className={styles.type}>Type: {tea.type} tea</h4>
             <p className={styles.description}>{tea.description}</p>
             <ul className={styles.weight}>
               Weight:
               {tea.weight.map((grams, index) => (
                 <li key={grams}>
-                  <Button onClick={() => setActiveWeight(index)} active={activeWeight === index}>
+                  <Button
+                    onClick={() => setActiveWeight(index)}
+                    active={activeWeight === index}
+                    className={styles.weightButton}
+                  >
                     {grams} g
                   </Button>
                 </li>
@@ -51,12 +57,12 @@ const TeaPage = () => {
               <FaCartShopping /> {addedValue}
             </Button>
             <div>
-              <Link to="/" className={styles.back}>
-                <Button className={styles.backButton}>
-                  <MdOutlineKeyboardDoubleArrowLeft />
+              <Button className={styles.backButton}>
+                <MdOutlineKeyboardDoubleArrowLeft />
+                <Link to="/" className={styles.backLink}>
                   Back
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
         </>

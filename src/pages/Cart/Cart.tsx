@@ -44,12 +44,12 @@ const Cart = () => {
         <Button className={styles.order}>Place an order</Button>
       </div>
       <div>
-        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-          <Button className={styles.back}>
-            <MdOutlineKeyboardDoubleArrowLeft />
+        <Button className={styles.back}>
+          <MdOutlineKeyboardDoubleArrowLeft />
+          <Link to="/" onClick={() => window.scrollTo(0, 0)} className={styles.backLink}>
             Home
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </div>
     </>
   );
