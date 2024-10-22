@@ -1,4 +1,4 @@
-import { createSlice,PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { fetchTeas } from './asyncActions';
 import { Status, Tea, TeaState } from './types';

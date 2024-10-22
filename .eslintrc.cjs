@@ -11,6 +11,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
     'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
@@ -23,5 +24,6 @@ module.exports = {
     'simple-import-sort/exports': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
+    'prettier/prettier': 'error',
   },
 };
