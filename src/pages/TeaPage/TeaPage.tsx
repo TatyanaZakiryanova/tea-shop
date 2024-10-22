@@ -4,7 +4,8 @@ import { MdOutlineKeyboardDoubleArrowLeft } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 
-import { Spinner } from '../../components/Spinner/Spinner';
+import Button from '../../components/UI/Button/Button';
+import Spinner from '../../components/UI/Spinner/Spinner';
 import useAddToCart from '../../hooks/useAddToCart';
 import useFetchTea from '../../hooks/useFetchTea';
 import { cartItemsSelector } from '../../redux/cartSlice/selectors';
@@ -40,27 +41,21 @@ const TeaPage = () => {
               Weight:
               {tea.weight.map((grams, index) => (
                 <li key={grams}>
-                  <button
-                    onClick={() => setActiveWeight(index)}
-                    className={activeWeight === index ? styles.activebutton : ''}
-                  >
+                  <Button onClick={() => setActiveWeight(index)} active={activeWeight === index}>
                     {grams} g
-                  </button>
+                  </Button>
                 </li>
               ))}
             </ul>
-            <button
-              onClick={onClickAddItem}
-              className={addedCartItem ? styles.added : styles.notadded}
-            >
+            <Button onClick={onClickAddItem} active={!!addedCartItem} className={styles.addButton}>
               <FaCartShopping /> {addedValue}
-            </button>
+            </Button>
             <div>
               <Link to="/" className={styles.back}>
-                <button className={styles.backbutton}>
+                <Button className={styles.backButton}>
                   <MdOutlineKeyboardDoubleArrowLeft />
                   Back
-                </button>
+                </Button>
               </Link>
             </div>
           </div>

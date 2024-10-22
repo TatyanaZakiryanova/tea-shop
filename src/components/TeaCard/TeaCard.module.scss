@@ -1,7 +1,4 @@
-@import '../../styles/variables.scss';
-@import '../../styles/components/activebutton.scss';
-
-.card {
+.teaCard {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +15,9 @@
     font-size: 25px;
   }
   .inform {
+    button {
+      margin: 2px;
+    }
     .price {
       font-size: 20px;
     }
@@ -28,32 +28,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      button {
-        font-size: 12px;
+      .weightButton {
         padding: 5px;
       }
     }
-    .activebutton {
-      @include activebutton;
-    }
   }
-
-  button {
-    font-size: 1rem;
-    margin: 2px;
-  }
-
-  .notadded {
+  .addButton {
     width: 100px;
-    &:active {
-      background-color: $activebutton;
-    }
-  }
-  .added {
-    width: 100px;
-    background-color: $highlight;
-    &:active {
-      background-color: $activebutton;
-    }
   }
 }

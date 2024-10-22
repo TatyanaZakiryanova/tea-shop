@@ -3,12 +3,23 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import useAddToCart from '../../hooks/useAddToCart';
-import { SingleTea } from '../../pages/TeaPage/types';
 import { cartItemsSelector } from '../../redux/cartSlice/selectors';
 import { selectAddedCartItem } from '../../utils/SelectAddedCartItem';
+import Button from '../UI/Button/Button';
 import styles from './TeaCard.module.scss';
 
-export const TeaCard: React.FC<SingleTea> = ({
+interface ITeaCardProps {
+  id: string;
+  imageUrl: string;
+  title: string;
+  type: string;
+  weight: number[];
+  price: number;
+  rating: number;
+  description: string;
+}
+
+const TeaCard = ({
   id,
   imageUrl,
   title,
@@ -17,7 +28,7 @@ export const TeaCard: React.FC<SingleTea> = ({
   price,
   rating,
   description,
-}) => {
+}: ITeaCardProps) => {
   const [activeWeight, setActiveWeight] = useState<number>(0);
   const cartItems = useSelector(cartItemsSelector);
 
@@ -28,7 +39,7 @@ export const TeaCard: React.FC<SingleTea> = ({
   const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
 
   return (
-    <div className={styles.card}>
+    <div className={styles.teaCard}>
       <Link key={id} to={`/tea/${id}`}>
         <img className={styles.image} src={imageUrl} title="Show description" />
       </Link>
@@ -42,20 +53,23 @@ export const TeaCard: React.FC<SingleTea> = ({
           <ul>
             {weight.map((grams, index) => (
               <li key={grams}>
-                <button
+                <Button
                   onClick={() => setActiveWeight(index)}
-                  className={activeWeight === index ? styles.activebutton : styles.weightbutton}
+                  active={activeWeight === index}
+                  className={styles.weightButton}
                 >
                   {grams} g
-                </button>
+                </Button>
               </li>
             ))}
           </ul>
         </div>
-        <button onClick={onClickAddItem} className={addedCartItem ? styles.added : styles.notadded}>
+        <Button onClick={onClickAddItem} active={!!addedCartItem} className={styles.addButton}>
           {addedValue}
-        </button>
+        </Button>
       </div>
     </div>
   );
 };
+
+export default TeaCard;

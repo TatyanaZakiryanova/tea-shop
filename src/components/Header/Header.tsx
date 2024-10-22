@@ -4,10 +4,11 @@ import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
 import { cartItemsSelector } from '../../redux/cartSlice/selectors';
-import { Search } from '../Search/Search';
+import Search from '../Search/Search';
+import Button from '../UI/Button/Button';
 import styles from './Header.module.scss';
 
-export const Header = (): JSX.Element => {
+const Header = () => {
   const location = useLocation();
   const items = useSelector(cartItemsSelector);
   const totalCount = items.length;
@@ -23,19 +24,21 @@ export const Header = (): JSX.Element => {
 
   return (
     <header className={styles.header}>
+      {location.pathname !== '/cart' && (
+        <Button className={styles.cartButton}>
+          <Link to="cart" className={styles.cartLink}>
+            <FaCartShopping className={styles.cartIcon} /> {totalCount}
+          </Link>
+        </Button>
+      )}
+      {location.pathname !== '/cart' && <Search />}
       <Link to="/" className={styles.link}>
         <div className={styles.title}>
           <h1>Tea Shop</h1>
         </div>
       </Link>
-      {location.pathname !== '/cart' && <Search />}
-      {location.pathname !== '/cart' && (
-        <button className={styles.cartbutton}>
-          <Link to="cart" className={styles.cartlink}>
-            <FaCartShopping className={styles.carticon} /> {totalCount}
-          </Link>
-        </button>
-      )}
     </header>
   );
 };
+
+export default Header;

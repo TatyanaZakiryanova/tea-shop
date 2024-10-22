@@ -3,9 +3,10 @@ import { RiDeleteBinLine } from 'react-icons/ri';
 import { addItem, minusAmount, removeItem } from '../../redux/cartSlice/cartSlice';
 import { CartItem } from '../../redux/cartSlice/types';
 import { useAppDispatch } from '../../redux/store';
+import Button from '../UI/Button/Button';
 import styles from './CartTea.module.scss';
 
-interface CartItemProps {
+interface ICartItemProps {
   id: string;
   imageUrl: string;
   title: string;
@@ -16,16 +17,7 @@ interface CartItemProps {
   count: number;
 }
 
-const CartTea: React.FC<CartItemProps> = ({
-  id,
-  imageUrl,
-  title,
-  price,
-  type,
-  rating,
-  weight,
-  count,
-}) => {
+const CartTea = ({ id, imageUrl, title, price, type, rating, weight, count }: ICartItemProps) => {
   const dispatch = useAppDispatch();
 
   const onClickRemoveItem = () => {
@@ -41,7 +33,7 @@ const CartTea: React.FC<CartItemProps> = ({
   };
 
   return (
-    <div className={styles.display}>
+    <div className={styles.cartItem}>
       <div className={styles.main}>
         <img className={styles.img} src={imageUrl} />
         <h3 className={styles.title}>{title}</h3>
@@ -54,16 +46,16 @@ const CartTea: React.FC<CartItemProps> = ({
       </div>
       <h4 className={styles.amount}>
         Number: {count}
-        <button onClick={onClickPlusAmount} className={styles.amountbutton}>
+        <Button onClick={onClickPlusAmount} className={styles.amountButton}>
           +
-        </button>
-        <button disabled={count === 1} onClick={onClickMinusAmount} className={styles.amountbutton}>
+        </Button>
+        <Button disabled={count === 1} onClick={onClickMinusAmount} className={styles.amountButton}>
           -
-        </button>
+        </Button>
       </h4>
-      <button className={styles.remove} onClick={onClickRemoveItem}>
+      <Button className={styles.remove} onClick={onClickRemoveItem}>
         <RiDeleteBinLine />
-      </button>
+      </Button>
     </div>
   );
 };

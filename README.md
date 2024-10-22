@@ -58,8 +58,6 @@
 ### Styling and Responsiveness
 
 - Адаптивная вёрстка до 360px ширины экрана (SCSS-модули)
-- Миксины
-- Раскрывающийся список при клике
 
 ## How to start project
 

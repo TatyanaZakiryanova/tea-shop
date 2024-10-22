@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 import { setCategoryIndex } from '../../redux/filterSlice/filterSlice';
 import { categorySelector } from '../../redux/filterSlice/selectors';
 import { useAppDispatch } from '../../redux/store';
+import Button from '../UI/Button/Button';
 import styles from './Categories.module.scss';
 
 const categories: string[] = ['All', 'Black', 'Green', 'Herbal'];
 
-export const Categories = (): JSX.Element => {
+const Categories = () => {
   const dispatch = useAppDispatch();
   const category = useSelector(categorySelector);
 
@@ -20,15 +21,18 @@ export const Categories = (): JSX.Element => {
       <ul>
         {categories.map((name, id) => (
           <li key={name}>
-            <button
-              className={category === id ? styles.active : ''}
+            <Button
+              active={category === id}
+              className={styles.marginButton}
               onClick={() => onClickCategory(id)}
             >
               {name}
-            </button>
+            </Button>
           </li>
         ))}
       </ul>
     </div>
   );
 };
+
+export default Categories;

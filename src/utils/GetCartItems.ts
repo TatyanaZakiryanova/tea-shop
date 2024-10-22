@@ -3,11 +3,11 @@ import { calcTotalCost } from './CalculateCost';
 
 export const GetCartItems = () => {
   const cartData = localStorage.getItem('cart');
-  const items: CartItem[] | [] = cartData ? JSON.parse(cartData) : [];
+  const items: CartItem[] | [] = cartData ? (JSON.parse(cartData) as CartItem[]) : [];
   const totalCost = calcTotalCost(items);
 
   return {
-    items: items as CartItem[],
+    items: items,
     totalCost,
   };
 };

@@ -24,7 +24,7 @@ const sort: SortName[] = [
   },
 ];
 
-export const Sort = (): JSX.Element => {
+const Sort = () => {
   const dispatch = useAppDispatch();
   const sortName = useSelector(sortSelector);
 
@@ -45,11 +45,7 @@ export const Sort = (): JSX.Element => {
         <div className={styles.dropdown}>
           <ul>
             {sort.map((obj) => (
-              <li
-                key={obj.name}
-                onClick={() => onClickSort(obj)}
-                className={sortName.sortParam === obj.sortParam ? styles.active : ''}
-              >
+              <li key={obj.name} onClick={() => onClickSort(obj)}>
                 {obj.name}
               </li>
             ))}
@@ -59,3 +55,5 @@ export const Sort = (): JSX.Element => {
     </div>
   );
 };
+
+export default Sort;

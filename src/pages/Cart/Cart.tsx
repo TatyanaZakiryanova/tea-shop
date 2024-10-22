@@ -5,13 +5,14 @@ import { v4 as uuidv4 } from 'uuid';
 
 import CartTea from '../../components/CartTea/CartTea';
 import EmptyCart from '../../components/EmptyCart/EmptyCart';
+import Button from '../../components/UI/Button/Button';
 import { clearCart } from '../../redux/cartSlice/cartSlice';
 import { cartItemsSelector, totalCostSelector } from '../../redux/cartSlice/selectors';
 import { CartItem } from '../../redux/cartSlice/types';
 import { useAppDispatch } from '../../redux/store';
 import styles from './Cart.module.scss';
 
-const Cart = (): JSX.Element => {
+const Cart = () => {
   const items = useSelector(cartItemsSelector);
   const totalCost = useSelector(totalCostSelector);
 
@@ -29,9 +30,9 @@ const Cart = (): JSX.Element => {
     <>
       <div className={styles.header}>
         <h2 className={styles.title}>Cart</h2>
-        <button className={styles.clear} onClick={onClickClearCart}>
+        <Button className={styles.clearCart} onClick={onClickClearCart}>
           Clear cart
-        </button>
+        </Button>
       </div>
       <div className={styles.item}>
         {items.map((item: CartItem) => (
@@ -40,14 +41,14 @@ const Cart = (): JSX.Element => {
       </div>
       <div className={styles.inform}>
         <div className={styles.total}>Total: {totalCost}</div>
-        <button className={styles.order}>Place an order</button>
+        <Button className={styles.order}>Place an order</Button>
       </div>
       <div>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-          <button className={styles.back}>
+          <Button className={styles.back}>
             <MdOutlineKeyboardDoubleArrowLeft />
             Home
-          </button>
+          </Button>
         </Link>
       </div>
     </>

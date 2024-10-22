@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Categories } from '../../components/Categories/Categories';
+import Categories from '../../components/Categories/Categories';
 import ItemsNotFound from '../../components/ItemsNotFound/ItemsNotFound';
 import Pagination from '../../components/Pagination/Pagination';
-import { Sort } from '../../components/Sort/Sort';
+import Sort from '../../components/Sort/Sort';
 import Skeleton from '../../components/TeaCard/Skeleton';
-import { TeaCard } from '../../components/TeaCard/TeaCard';
+import TeaCard from '../../components/TeaCard/TeaCard';
 import {
   categorySelector,
   currentPageSelector,
@@ -20,7 +20,7 @@ import { itemsSelector, statusSelector } from '../../redux/teaSlice/selectors';
 import { Status } from '../../redux/teaSlice/types';
 import styles from './Main.module.scss';
 
-const Main = (): JSX.Element => {
+const Main = () => {
   const sortType = useSelector(sortSelector);
   const categoryIndex = useSelector(categorySelector);
   const searchValue = useSelector(searchValueSelector);
@@ -73,7 +73,7 @@ const Main = (): JSX.Element => {
         <Categories />
         <Sort />
       </div>
-      <div className={styles.items}>
+      <div className={styles.main}>
         <>
           {status === Status.ERROR ? (
             <ItemsNotFound />

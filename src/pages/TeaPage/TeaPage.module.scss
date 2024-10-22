@@ -1,6 +1,4 @@
 @import '../../styles/variables';
-@import '../../styles/components/cartbutton.scss';
-@import '../../styles/components/activebutton.scss';
 
 .wrapper {
   margin-top: 20px;
@@ -24,13 +22,6 @@
     flex-direction: column;
     font-size: $size;
     padding: 20px;
-    .notadded {
-      @include cartbutton;
-    }
-    .added {
-      @include cartbutton;
-      background-color: $highlight;
-    }
     button {
       margin-top: 10px;
       margin-right: 5px;
@@ -60,21 +51,28 @@
         padding: 8px;
         margin: 2px;
       }
-      .activebutton {
-        @include activebutton;
-      }
     }
     p {
       font-size: 0.8rem;
     }
-    .backbutton {
-      margin-top: 80px;
+    .addButton {
+      padding: 8px;
       font-size: 20px;
+      min-width: 500px;
+      @media screen and (max-width: 430px) {
+        min-width: 200px;
+      }
+    }
+    .backButton {
+      margin-top: 80px;
       display: flex;
       align-items: center;
     }
     .back {
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      margin: 10px 0 0 10px;
     }
   }
 }

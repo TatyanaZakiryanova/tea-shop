@@ -4,9 +4,10 @@ import { LiaSearchSolid } from 'react-icons/lia';
 
 import { setSearchValue } from '../../redux/filterSlice/filterSlice';
 import { useAppDispatch } from '../../redux/store';
+import Input from '../UI/Input/Input';
 import styles from './Search.module.scss';
 
-export const Search = () => {
+const Search = () => {
   const [searchText, setSearchText] = useState<string>('');
   const dispatch = useAppDispatch();
 
@@ -31,8 +32,10 @@ export const Search = () => {
 
   return (
     <div className={styles.search}>
-      <LiaSearchSolid className={styles.icon} />
-      <input value={searchText} onChange={onChangeInput} placeholder="Search..." />
+      <LiaSearchSolid className={styles.searchIcon} />
+      <Input value={searchText} onChange={onChangeInput} className={styles.searchInput} />
     </div>
   );
 };
+
+export default Search;
