@@ -46,8 +46,8 @@ const TeaCard = ({
       <h3 className={styles.title}>{title}</h3>
       <div className={styles.inform}>
         <h4 className={styles.price}>{price}</h4>
-        <h4>Type: {type} tea</h4>
-        <h4>Rating: {rating}</h4>
+        <h4 className={styles.type}>Type: {type} tea</h4>
+        <h4 className={styles.rating}>Rating: {rating}</h4>
         <div className={styles.weight}>
           <h4>Weight:</h4>
           <ul>

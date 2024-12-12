@@ -4,7 +4,7 @@
   position: relative;
   .label {
     margin: 0 10px 0 0;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
     @media screen and (max-width: 412px) {
       font-size: 14px;
@@ -19,7 +19,7 @@
   .dropdown {
     position: absolute;
     right: 0;
-    top: 35px;
+    top: 25px;
     padding: 10px 0;
     ul {
       display: flex;
@@ -29,7 +29,6 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       li {
         border: none;
-        font-size: 1.2rem;
         padding: 15px;
         box-sizing: border-box;
         border-radius: 15px;

@@ -1,19 +1,15 @@
 .categories {
   margin: 10px;
   .marginButton {
-    margin: 8px 8px 8px 0;
-    font-size: 18px;
+    margin: 4px 4px 4px 0;
     @media screen and (max-width: 430px) {
-      margin: 6px 6px 6px 0;
-      font-size: 16px;
+      font-size: 14px;
     }
     @media screen and (max-width: 414px) {
-      margin: 5px 5px 5px 0;
-      font-size: 14px;
+      font-size: 12px;
     }
     @media screen and (max-width: 360px) {
-      margin: 4px 4px 4px 0;
-      font-size: 14px;
+      font-size: 10px;
     }
     &:hover {
       cursor: pointer;

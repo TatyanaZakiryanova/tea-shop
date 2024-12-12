@@ -34,9 +34,6 @@ const TeaPage = () => {
               {tea.price}
               <span> per 100 grams</span>
             </h4>
-            <p className={styles.note}>
-              The price of tea will be calculated depending on the selected weight.
-            </p>
             <h4 className={styles.type}>Type: {tea.type} tea</h4>
             <p className={styles.description}>{tea.description}</p>
             <ul className={styles.weight}>

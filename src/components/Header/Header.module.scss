@@ -1,7 +1,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  font-size: 2rem;
+  font-size: 25px;
   background-image: url('../../assets/header.jpg');
   background-size: cover;
   .link {
@@ -16,7 +16,7 @@
   .cartButton {
     align-self: flex-end;
     min-width: 50px;
-    font-size: 1.5rem;
+    font-size: 20px;
     margin: 5px;
     .cartLink {
       text-decoration: none;
