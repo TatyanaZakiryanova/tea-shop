@@ -4,15 +4,6 @@
     margin: 6px 6px 6px 0;
     min-width: 50px;
     padding: 10px 20px;
-    @media screen and (max-width: 430px) {
-      font-size: 14px;
-    }
-    @media screen and (max-width: 414px) {
-      font-size: 12px;
-    }
-    @media screen and (max-width: 360px) {
-      font-size: 10px;
-    }
     &:hover {
       cursor: pointer;
     }

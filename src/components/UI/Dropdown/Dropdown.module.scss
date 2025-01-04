@@ -2,21 +2,16 @@
 
 .sort {
   position: relative;
-  width: 100px;
   .label {
     margin: 0 10px 0 0;
     font-size: 14px;
     cursor: pointer;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px 15px;
-    border-radius: 15px;
     text-align: center;
-    @media screen and (max-width: 414px) {
-      font-size: 12px;
-    }
-    @media screen and (max-width: 360px) {
-      font-size: 10px;
+    padding: 10px 20px;
+    width: 90px;
+    @media screen and (max-width: 430px) {
+      margin: 0 0 20px 0;
+      width: 70vw;
     }
   }
   .dropdown {
@@ -25,6 +20,9 @@
     top: 35px;
     padding: 10px 0;
     width: 100px;
+    @media screen and (max-width: 430px) {
+      width: 70vw;
+    }
     ul {
       display: flex;
       flex-direction: column;
@@ -33,6 +31,9 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       margin-right: 10px;
       font-size: 14px;
+      @media screen and (max-width: 430px) {
+        margin-right: 0;
+      }
       li {
         border: none;
         padding: 15px 20px;

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import styles from './Dropdown.module.scss';
+import Button from '../Button/Button';
 
 interface DropdownProps<T> {
   label?: string;
@@ -26,9 +27,9 @@ export const Dropdown = <T extends { name: string }>({
 
   return (
     <div className={styles.sort}>
-      <h2 className={styles.label}>
-        {label} <span onClick={toggleDropdown}>{currentOption.name}</span>
-      </h2>
+      <Button className={styles.label} onClick={toggleDropdown}>
+        {label} <span>{currentOption.name}</span>
+      </Button>
       {isOpen && (
         <div className={styles.dropdown}>
           <ul>
