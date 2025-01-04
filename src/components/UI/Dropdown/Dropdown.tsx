@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './Dropdown.module.scss';
 
 interface DropdownProps<T> {
-  label: string;
+  label?: string;
   options: T[];
   currentOption: T;
   handleOption: (selectedOption: T) => void;
@@ -27,7 +27,7 @@ export const Dropdown = <T extends { name: string }>({
   return (
     <div className={styles.sort}>
       <h2 className={styles.label}>
-        {label}: <span onClick={toggleDropdown}>{currentOption.name}</span>
+        {label} <span onClick={toggleDropdown}>{currentOption.name}</span>
       </h2>
       {isOpen && (
         <div className={styles.dropdown}>

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { FaCartShopping } from 'react-icons/fa6';
+import { GiCoffeeCup } from 'react-icons/gi';
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -31,10 +32,13 @@ const Header = () => {
           </Link>
         </Button>
       )}
-      {location.pathname !== '/cart' && <Search />}
+      <div className={styles.searchInput}>{location.pathname !== '/cart' && <Search />}</div>
       <Link to="/" className={styles.link}>
         <div className={styles.title}>
-          <h1>Tea Shop</h1>
+          <h1>
+            <GiCoffeeCup />
+            Tea Shop
+          </h1>
         </div>
       </Link>
     </header>

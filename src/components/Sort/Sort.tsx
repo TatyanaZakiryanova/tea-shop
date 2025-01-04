@@ -31,9 +31,7 @@ const Sort = () => {
     dispatch(setSortParam(obj));
   };
 
-  return (
-    <Dropdown label="Sort by" options={sort} currentOption={sortName} handleOption={onClickSort} />
-  );
+  return <Dropdown options={sort} currentOption={sortName} handleOption={onClickSort} />;
 };
 
 export default Sort;

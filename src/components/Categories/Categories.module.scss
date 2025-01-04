@@ -1,7 +1,9 @@
 .categories {
-  margin: 10px;
+  margin: 15px;
   .marginButton {
-    margin: 4px 4px 4px 0;
+    margin: 6px 6px 6px 0;
+    min-width: 50px;
+    padding: 10px 20px;
     @media screen and (max-width: 430px) {
       font-size: 14px;
     }

@@ -37,7 +37,6 @@ const TeaCard = ({
 
   const addedCartItem = selectAddedCartItem(cartItems, id, weight[activeWeight]);
   const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
-
   return (
     <div className={styles.teaCard}>
       <Link key={id} to={`/tea/${id}`}>

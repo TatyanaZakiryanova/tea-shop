@@ -1,20 +1,30 @@
 .header {
-  display: flex;
-  flex-direction: column;
   font-size: 25px;
-  background-image: url('../../assets/header.jpg');
-  background-size: cover;
+  position: relative;
+  min-height: 180px;
+  box-shadow: 0 10px 15px rgba(40, 40, 40, 0.2);
+  border-radius: 15px;
   .link {
     text-decoration: none;
     color: white;
     max-width: 550px;
     .title {
-      margin: 20px;
+      position: absolute;
+      font-size: 20px;
+      bottom: 10px;
+      left: 20px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
   }
+  .searchInput {
+    position: absolute;
+    right: 0;
+    top: 50px;
+  }
   .cartButton {
-    align-self: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
     min-width: 50px;
     font-size: 20px;
     margin: 5px;
