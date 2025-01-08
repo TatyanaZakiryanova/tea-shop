@@ -6,7 +6,6 @@ const Spinner = () => {
   return (
     <div className={styles.spinner}>
       <PiSpinner className={styles.icon} />
-      Loading, please wait...
     </div>
   );
 };

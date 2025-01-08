@@ -1,11 +1,18 @@
 .categories {
   margin: 15px;
-  .marginButton {
-    margin: 6px 6px 6px 0;
-    min-width: 50px;
-    padding: 10px 20px;
-    &:hover {
-      cursor: pointer;
+  width: 100%;
+  ul {
+    display: flex;
+    gap: 6px;
+    @media screen and (max-width: 430px) {
+      justify-content: space-between;
+    }
+    .marginButton {
+      min-width: 80px;
+      padding: 10px 20px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
