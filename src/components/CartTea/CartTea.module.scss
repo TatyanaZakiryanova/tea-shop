@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
   .main {
     text-align: center;
-    .img {
+    .itemImage {
       width: 170px;
       height: 165px;
       transition: all 0.3s ease-in-out;
@@ -30,7 +30,7 @@
       height: 30px;
     }
   }
-  .remove {
+  .removeButton {
     align-self: center;
     justify-self: center;
     display: flex;

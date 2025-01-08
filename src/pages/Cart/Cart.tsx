@@ -44,7 +44,7 @@ const Cart = () => {
         <Button className={styles.order}>Place an order</Button>
       </div>
       <div>
-        <Button className={styles.back}>
+        <Button className={styles.backButton}>
           <MdOutlineKeyboardDoubleArrowLeft />
           <Link to="/" onClick={() => window.scrollTo(0, 0)} className={styles.backLink}>
             Home

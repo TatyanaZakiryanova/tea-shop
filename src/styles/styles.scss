@@ -9,12 +9,11 @@
 }
 
 html {
-  font-size: 16px;
   height: 100%;
 }
 
 body {
-  background-color: rgb(144, 171, 165);
+  background-color: $background-color;
 }
 
 li {

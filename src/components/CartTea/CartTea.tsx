@@ -35,7 +35,7 @@ const CartTea = ({ id, imageUrl, title, price, type, rating, weight, count }: IC
   return (
     <div className={styles.cartItem}>
       <div className={styles.main}>
-        <img className={styles.img} src={imageUrl} />
+        <img className={styles.itemImage} src={imageUrl} />
         <h3 className={styles.title}>{title}</h3>
       </div>
       <div className={styles.inform}>
@@ -53,7 +53,7 @@ const CartTea = ({ id, imageUrl, title, price, type, rating, weight, count }: IC
           -
         </Button>
       </h4>
-      <Button className={styles.remove} onClick={onClickRemoveItem}>
+      <Button className={styles.removeButton} onClick={onClickRemoveItem}>
         <RiDeleteBinLine />
       </Button>
     </div>

@@ -16,7 +16,7 @@ ul {
 .main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-  background-color: $background;
+  background-color: white;
   justify-items: center;
   border-radius: $radius;
   padding: 15px;
