@@ -29,9 +29,9 @@ const Cart = () => {
   return (
     <>
       <div className={styles.header}>
-        <h2 className={styles.title}>Cart</h2>
+        <h2 className={styles.title}>Корзина</h2>
         <Button className={styles.clearCart} onClick={onClickClearCart}>
-          Clear cart
+          Очистить корзину
         </Button>
       </div>
       <div className={styles.item}>
@@ -40,14 +40,14 @@ const Cart = () => {
         ))}
       </div>
       <div className={styles.inform}>
-        <div className={styles.total}>Total: {totalCost}</div>
-        <Button className={styles.order}>Place an order</Button>
+        <div className={styles.total}>Сумма: {totalCost}</div>
+        <Button className={styles.order}>Оформить заказ</Button>
       </div>
       <div>
         <Button className={styles.backButton}>
           <MdOutlineKeyboardDoubleArrowLeft />
           <Link to="/" onClick={() => window.scrollTo(0, 0)} className={styles.backLink}>
-            Home
+            На главную
           </Link>
         </Button>
       </div>

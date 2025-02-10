@@ -6,7 +6,7 @@ const DataNotFound = () => {
   return (
     <div className={styles.error}>
       <MdOutlineErrorOutline size={30} />
-      <h3>Data not found</h3>
+      <h3>Страница не найдена</h3>
     </div>
   );
 };

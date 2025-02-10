@@ -40,12 +40,12 @@ const CartTea = ({ id, imageUrl, title, price, type, rating, weight, count }: IC
       </div>
       <div className={styles.inform}>
         <h4 className={styles.price}>{price}</h4>
-        <h4>Type: {type} tea</h4>
-        <h4>Rating: {rating}</h4>
-        <h4>Weight: {weight} g</h4>
+        <h4>Тип: {type} чай</h4>
+        <h4>Рейтинг: {rating}</h4>
+        <h4>Вес: {weight} г</h4>
       </div>
       <h4 className={styles.amount}>
-        Number: {count}
+        Количество: {count}
         <Button onClick={onClickPlusAmount} className={styles.amountButton}>
           +
         </Button>

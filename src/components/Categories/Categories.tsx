@@ -6,7 +6,7 @@ import { useAppDispatch } from '../../redux/store';
 import Button from '../UI/Button/Button';
 import styles from './Categories.module.scss';
 
-const categories: string[] = ['All', 'Black', 'Green', 'Herbal'];
+const categories: string[] = ['Все', 'Черный', 'Зеленый', 'Травяной'];
 
 const Categories = () => {
   const dispatch = useAppDispatch();

@@ -6,7 +6,7 @@
 
 [Deploy](https://teaonlinestore.netlify.app/)
 
-<img src='/src/assets/preview.png' alt='preview'>
+<img src='/src/assets/teashop_preview.png' alt='preview'>
 
 ## Technologies Used
 

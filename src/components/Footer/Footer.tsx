@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <IoIosLeaf />
       <h1>Tea Shop</h1>
-      <p>online store of loose leaf tea</p>
+      <p>интернет-магазин листового чая</p>
       <div className={styles.bottom}>2024</div>
     </footer>
   );

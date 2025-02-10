@@ -36,19 +36,19 @@ const TeaCard = ({
   const { onClickAddItem } = useAddToCart(tea, activeWeight);
 
   const addedCartItem = selectAddedCartItem(cartItems, id, weight[activeWeight]);
-  const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
+  const addedValue = addedCartItem ? `В корзине: ${addedCartItem.count}` : `Добавить в корзину`;
   return (
     <div className={styles.teaCard}>
       <Link key={id} to={`/tea/${id}`}>
-        <img className={styles.image} src={imageUrl} title="Show description" />
+        <img className={styles.image} src={imageUrl} title="Показать описание" />
       </Link>
       <h3 className={styles.title}>{title}</h3>
       <div className={styles.inform}>
         <h4 className={styles.price}>{price}</h4>
-        <h4 className={styles.type}>Type: {type} tea</h4>
-        <h4 className={styles.rating}>Rating: {rating}</h4>
+        <h4 className={styles.type}>Тип: {type} чай</h4>
+        <h4 className={styles.rating}>Рейтинг: {rating}</h4>
         <div className={styles.weight}>
-          <h4>Weight:</h4>
+          <h4>Вес:</h4>
           <ul>
             {weight.map((grams, index) => (
               <li key={grams}>
@@ -57,7 +57,7 @@ const TeaCard = ({
                   active={activeWeight === index}
                   className={styles.weightButton}
                 >
-                  {grams} g
+                  {grams} г
                 </Button>
               </li>
             ))}

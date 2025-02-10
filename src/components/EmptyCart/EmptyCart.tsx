@@ -9,16 +9,16 @@ const EmptyCart = () => {
   return (
     <>
       <div>
-        <h2 className={styles.title}>Cart</h2>
+        <h2 className={styles.title}>Корзина</h2>
       </div>
       <div className={styles.emptyCart}>
         <IoCartOutline className={styles.emptyCartIcon} size={60} />
-        <h2>Cart is empty</h2>
-        <p>Return to the main page to order items:</p>
+        <h2>Корзина пуста</h2>
+        <p>Вернитесь на главную, чтобы заказать товары:</p>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <Button className={styles.homeButton}>
             <MdOutlineKeyboardDoubleArrowLeft />
-            Home
+            На главную
           </Button>
         </Link>
       </div>

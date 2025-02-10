@@ -10,7 +10,7 @@ const Input = ({
   name = 'search',
   id = 'search',
   value,
-  placeholder = 'Search...',
+  placeholder = 'Поиск',
   className,
 }: IInputProps) => {
   return (

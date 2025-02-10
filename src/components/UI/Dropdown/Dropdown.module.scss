@@ -8,14 +8,17 @@
     cursor: pointer;
     text-align: center;
     padding: 10px 20px;
-    width: 90px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .dropdown {
     position: absolute;
     right: 0;
     top: 35px;
     padding: 10px 0;
-    width: 100px;
+    width: 120px;
     ul {
       display: flex;
       flex-direction: column;
@@ -31,6 +34,9 @@
         border-radius: 15px;
         color: black;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         transition:
           background-color 0.2s ease-in-out,
           color 0.2s ease-in-out;

@@ -21,7 +21,7 @@ const TeaPage = () => {
 
   const addedCartItem = selectAddedCartItem(cartItems, tea?.id, tea?.weight[activeWeight]);
 
-  const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
+  const addedValue = addedCartItem ? `В корзине: ${addedCartItem.count}` : `Добавить в корзину`;
 
   return (
     <div className={styles.wrapper}>
@@ -32,12 +32,12 @@ const TeaPage = () => {
             <h2 className={styles.title}>{tea.title}</h2>
             <h4 className={styles.price}>
               {tea.price}
-              <span> per 100 grams</span>
+              <span> за 100 г</span>
             </h4>
-            <h4 className={styles.type}>Type: {tea.type} tea</h4>
+            <h4 className={styles.type}>Тип: {tea.type} чай</h4>
             <p className={styles.description}>{tea.description}</p>
             <ul className={styles.weight}>
-              Weight:
+              Вес:
               {tea.weight.map((grams, index) => (
                 <li key={grams}>
                   <Button
@@ -45,7 +45,7 @@ const TeaPage = () => {
                     active={activeWeight === index}
                     className={styles.weightButton}
                   >
-                    {grams} g
+                    {grams} г
                   </Button>
                 </li>
               ))}
@@ -57,7 +57,7 @@ const TeaPage = () => {
               <Button className={styles.backButton}>
                 <MdOutlineKeyboardDoubleArrowLeft />
                 <Link to="/" className={styles.backLink}>
-                  Back
+                  На главную
                 </Link>
               </Button>
             </div>

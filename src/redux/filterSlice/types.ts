@@ -5,7 +5,7 @@ export enum SortEnum {
 }
 
 export type SortName = {
-  name: 'Title' | 'Price ↓' | 'Price ↑' | 'Rating ↓' | 'Rating ↑';
+  name: 'Название' | 'Цена ↓' | 'Цена ↑' | 'Рейтинг ↓' | 'Рейтинг ↑';
   sortParam: SortEnum;
 };
 

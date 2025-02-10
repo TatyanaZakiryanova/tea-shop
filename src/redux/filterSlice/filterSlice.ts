@@ -5,7 +5,7 @@ import { FilterSlice, SortEnum, SortName } from './types';
 const initialState: FilterSlice = {
   categoryIndex: 0,
   sort: {
-    name: 'Title',
+    name: 'Название',
     sortParam: SortEnum.TITLE,
   },
   searchValue: '',

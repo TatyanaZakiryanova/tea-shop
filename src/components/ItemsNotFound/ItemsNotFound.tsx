@@ -6,7 +6,7 @@ const ItemsNotFound = () => {
   return (
     <div className={styles.error}>
       <PiWarningCircleLight className={styles.errorIcon} />
-      <p>No items found.</p>
+      <p>Товары не найдены</p>
     </div>
   );
 };

@@ -8,17 +8,17 @@ import { Dropdown } from '../UI/Dropdown/Dropdown';
 
 const sort: SortName[] = [
   {
-    name: 'Title',
+    name: 'Название',
     sortParam: SortEnum.TITLE,
   },
-  { name: 'Price ↓', sortParam: SortEnum.PRICE },
-  { name: 'Price ↑', sortParam: SortEnum.PRICE },
+  { name: 'Цена ↓', sortParam: SortEnum.PRICE },
+  { name: 'Цена ↑', sortParam: SortEnum.PRICE },
   {
-    name: 'Rating ↓',
+    name: 'Рейтинг ↓',
     sortParam: SortEnum.RATING,
   },
   {
-    name: 'Rating ↑',
+    name: 'Рейтинг ↑',
     sortParam: SortEnum.RATING,
   },
 ];
