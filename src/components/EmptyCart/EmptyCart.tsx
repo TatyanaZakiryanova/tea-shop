@@ -13,7 +13,7 @@ const EmptyCart = () => {
       </div>
       <div className={styles.emptyCart}>
         <IoCartOutline className={styles.emptyCartIcon} size={60} />
-        <h2>Корзина пуста</h2>
+        <h3>Корзина пуста</h3>
         <p>Вернитесь на главную, чтобы заказать товары:</p>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <Button className={styles.homeButton}>

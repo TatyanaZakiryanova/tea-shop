@@ -39,12 +39,12 @@ const CartTea = ({ id, imageUrl, title, price, type, rating, weight, count }: IC
         <h3 className={styles.title}>{title}</h3>
       </div>
       <div className={styles.inform}>
-        <h4 className={styles.price}>{price}</h4>
-        <h4>Тип: {type} чай</h4>
-        <h4>Рейтинг: {rating}</h4>
-        <h4>Вес: {weight} г</h4>
+        <p className={styles.price}>{price}</p>
+        <p>Тип: {type} чай</p>
+        <p>Рейтинг: {rating}</p>
+        <p>Вес: {weight} г</p>
       </div>
-      <h4 className={styles.amount}>
+      <p className={styles.amount}>
         Количество: {count}
         <Button onClick={onClickPlusAmount} className={styles.amountButton}>
           +
@@ -52,7 +52,7 @@ const CartTea = ({ id, imageUrl, title, price, type, rating, weight, count }: IC
         <Button disabled={count === 1} onClick={onClickMinusAmount} className={styles.amountButton}>
           -
         </Button>
-      </h4>
+      </p>
       <Button className={styles.removeButton} onClick={onClickRemoveItem}>
         <RiDeleteBinLine />
       </Button>

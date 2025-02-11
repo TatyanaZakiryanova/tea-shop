@@ -44,9 +44,9 @@ const TeaCard = ({
       </Link>
       <h3 className={styles.title}>{title}</h3>
       <div className={styles.inform}>
-        <h4 className={styles.price}>{price}</h4>
-        <h4 className={styles.type}>Тип: {type} чай</h4>
-        <h4 className={styles.rating}>Рейтинг: {rating}</h4>
+        <p className={styles.price}>{price}</p>
+        <p className={styles.type}>Тип: {type} чай</p>
+        <p className={styles.rating}>Рейтинг: {rating}</p>
         <div className={styles.weight}>
           <h4>Вес:</h4>
           <ul>

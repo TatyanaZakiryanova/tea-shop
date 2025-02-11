@@ -34,7 +34,7 @@ const TeaPage = () => {
               {tea.price}
               <span> за 100 г</span>
             </h4>
-            <h4 className={styles.type}>Тип: {tea.type} чай</h4>
+            <p className={styles.type}>Тип: {tea.type} чай</p>
             <p className={styles.description}>{tea.description}</p>
             <ul className={styles.weight}>
               Вес:
