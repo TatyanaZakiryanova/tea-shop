@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import styles from './Dropdown.module.scss';
 import Button from '../Button/Button';
+import styles from './Dropdown.module.scss';
 
 interface DropdownProps<T> {
   label?: string;

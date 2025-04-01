@@ -3,19 +3,22 @@
 .pagination {
   display: flex;
   justify-content: center;
+
   a {
-    background-color: white;
-    color: rgb(47, 79, 70);
+    background-color: #ffffff;
+    color: #2f4f46;
     border-radius: $radius;
     margin-top: 20px;
     margin-right: 4px;
     padding: 8px;
     width: 10px;
     height: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px #00000033;
+
     &:hover {
-      background-color: rgb(103, 150, 137);
+      background-color: #679689;
     }
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,16 +27,18 @@
       background-color 0.2s ease-in-out,
       color 0.2s ease-in-out;
   }
+
   :global {
     .selected {
       a {
         background-color: $highlight;
       }
     }
+
     .disabled {
       a {
-        background-color: rgb(224, 224, 224);
-        color: rgb(160, 160, 160);
+        background-color: #e0e0e0;
+        color: #a0a0a0;
         cursor: not-allowed;
         box-shadow: none;
       }

@@ -5,23 +5,26 @@
   box-sizing: border-box;
   padding: 7px;
   border-radius: 15px;
-  background-color: white;
-  color: rgb(47, 79, 70);
+  background-color: #ffffff;
+  color: #2f4f46;
   cursor: pointer;
   transition:
     background-color 0.2s ease-in-out,
     color 0.2s ease-in-out;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px #00000033;
+
   &:hover {
-    background-color: rgb(103, 150, 137);
+    background-color: #679689;
   }
+
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 1px rgba(103, 150, 137, 0.5);
+    box-shadow: 0 0 0 1px #67968980;
   }
+
   &:disabled {
     pointer-events: none;
-    background-color: rgba(212, 212, 212, 0.5);
+    background-color: #d4d4d480;
   }
 }
 

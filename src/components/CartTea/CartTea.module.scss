@@ -1,41 +1,49 @@
 .cartItem {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-  .main {
-    text-align: center;
-    .itemImage {
-      width: 170px;
-      height: 165px;
-      transition: all 0.3s ease-in-out;
-      &:hover {
-        transform: scale(0.9);
-      }
-    }
+}
+
+.main {
+  text-align: center;
+}
+
+.itemImage {
+  width: 170px;
+  height: 165px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(0.9);
   }
-  .inform {
-    text-align: center;
-    align-self: center;
-    justify-self: center;
-    .price {
-      font-weight: bold;
-    }
-  }
-  .amount {
-    align-self: center;
-    justify-self: center;
-    .amountButton {
-      margin: 2px;
-      font-size: 15px;
-      width: 30px;
-      height: 30px;
-    }
-  }
-  .removeButton {
-    align-self: center;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    width: 40px;
-    height: 30px;
-  }
+}
+
+.inform {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.amount {
+  align-self: center;
+  justify-self: center;
+}
+
+.amountButton {
+  margin: 2px;
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.removeButton {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 30px;
 }

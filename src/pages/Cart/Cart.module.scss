@@ -4,16 +4,18 @@
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  .title {
-    margin: 10px;
-  }
-  .clearCart {
-    margin: 10px;
-  }
+}
+
+.title {
+  margin: 10px;
+}
+
+.clearCart {
+  margin: 10px;
 }
 
 .item {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: $radius;
   padding: 50px;
 }
@@ -21,19 +23,23 @@
 .inform {
   display: flex;
   justify-content: space-between;
-  button {
-    font-size: 20px;
-    margin: 0;
-  }
-  margin-top: 15px;
-  .total {
-    font-size: 20px;
-    margin: 5px 0 5px 10px;
-  }
+
   .order {
     margin: 0 10px 0 0;
     padding: 8px;
   }
+
+  button {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  margin-top: 15px;
+}
+
+.total {
+  font-size: 20px;
+  margin: 5px 0 5px 10px;
 }
 
 .backButton {
@@ -41,7 +47,8 @@
   align-items: center;
   justify-content: center;
   margin: 10px 0 0 10px;
-  .backLink {
-    color: black;
-  }
+}
+
+.backLink {
+  color: #000000;
 }

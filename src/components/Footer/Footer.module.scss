@@ -1,18 +1,21 @@
 .footer {
-  box-shadow: 0 10px 15px rgba(40, 40, 40, 0.5);
+  box-shadow: 0 10px 15px #28282880;
   text-align: center;
   margin-top: 20px;
-  color: white;
+  color: #ffffff;
   padding: 5px;
   border-radius: 15px;
+
   h1 {
     font-size: 20px;
   }
+
   p {
     font-size: 13px;
     margin: 5px;
   }
-  .bottom {
-    margin-top: 20px;
-  }
+}
+
+.bottom {
+  margin-top: 20px;
 }

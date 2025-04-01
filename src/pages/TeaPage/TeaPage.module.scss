@@ -2,71 +2,85 @@
 
 .wrapper {
   margin-top: 20px;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: $radius;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-flow: row wrap;
-  .img {
-    width: 450px;
-    height: 450px;
-    border-radius: $radius;
-    @media screen and (max-width: 430px) {
-      width: 320px;
-      height: 300px;
-    }
+}
+
+.img {
+  width: 450px;
+  height: 450px;
+  border-radius: $radius;
+
+  @media screen and (max-width: 430px) {
+    width: 320px;
+    height: 300px;
   }
-  .inform {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    @media screen and (max-width: 820px) {
-      width: 100%;
-    }
-    .title {
-      font-size: 25px;
-    }
-    .price {
-      font-weight: bold;
-    }
-    .type {
-      font-size: 13px;
-      margin-top: 10px;
-    }
-    .description {
-      font-size: 18px;
-      margin: 30px 0;
-    }
-    .weight {
-      display: flex;
-      align-items: center;
-      .weightButton {
-        padding: 6px;
-        margin: 2px;
-      }
-    }
-    .addButton {
-      padding: 8px;
-      font-size: 18px;
-      min-width: 500px;
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 4px;
-      @media screen and (max-width: 430px) {
-        min-width: 200px;
-      }
-    }
-    .backButton {
-      margin-top: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .backLink {
-        color: black;
-      }
-    }
+}
+
+.inform {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  @media screen and (max-width: 820px) {
+    width: 100%;
   }
+}
+
+.title {
+  font-size: 25px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.type {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+.weight {
+  display: flex;
+  align-items: center;
+}
+
+.weightButton {
+  padding: 6px;
+  margin: 2px;
+}
+
+.addButton {
+  padding: 8px;
+  font-size: 18px;
+  min-width: 500px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  @media screen and (max-width: 430px) {
+    min-width: 200px;
+  }
+}
+
+.backButton {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backLink {
+  color: #000000;
 }

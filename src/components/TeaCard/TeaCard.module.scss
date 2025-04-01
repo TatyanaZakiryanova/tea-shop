@@ -3,41 +3,46 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  .image {
-    height: 200px;
-    width: 200px;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      transform: scale(0.9);
-    }
+}
+
+.image {
+  height: 200px;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(0.9);
   }
-  .title {
-    font-size: 18px;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.inform {
+  button {
+    margin: 2px;
   }
-  .inform {
-    button {
-      margin: 2px;
-    }
-    .price,
-    .type,
-    .rating {
-      font-size: 13px;
-    }
-    p {
-      font-size: 10px;
-    }
-    .weight {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .weightButton {
-        padding: 5px;
-        font-size: 10px;
-      }
-    }
-  }
-  .addButton {
-    width: 130px;
-    font-size: 12px;
-  }
+}
+
+.price,
+.type,
+.rating {
+  font-size: 13px;
+}
+
+.weight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weightButton {
+  padding: 5px;
+  font-size: 10px;
+}
+
+.addButton {
+  width: 130px;
+  font-size: 12px;
 }
